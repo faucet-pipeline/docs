@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% seo %}
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,700" rel="stylesheet">
+		<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+	</head>
+	<body>
+		<header>
+			<h1>{{ page.title }}</h1>
+		</header>
+		<aside>
+			{% include nav.html %}
+		</aside>
+		<main>
+			{{ content }}
+		</main>
+	</body>
+</html>
