@@ -14,6 +14,14 @@ body {
 	padding: 40px 20px 0;
 }
 
+aside {
+	background-image: url(/assets/logo.png);
+	background-position: top center;
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+	padding-top: 210px;
+}
+
 ul {
 	padding: 0;
 	list-style-position: outside;
@@ -23,19 +31,18 @@ ul {
 	header {
 		text-align: center;
 	}
-
-	.logo {
-		margin: 0 auto;
-		display: block;
-	}
 }
 
 @media screen and (min-width: 769px) {
 	body {
 		display: grid;
 		grid-template-columns: 1fr 200px 500px 1fr;
-		grid-template-areas: '. . header .' '. aside main .';
+		grid-template-areas: '. warning warning .' '. . header .' '. aside main .';
 		grid-column-gap: 15px;
+	}
+
+	.warning {
+		grid-area: warning;
 	}
 
 	header {
@@ -49,4 +56,12 @@ ul {
 	main {
 		grid-area: main;
 	}
+}
+
+.warning {
+	color: #721c24;
+	background-color: #f8d7da;
+	border: 1px solid #f5c6cb;
+	border-radius: .25rem;
+	padding: .75rem 1.25rem;
 }
