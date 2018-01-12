@@ -11,7 +11,7 @@ typical low-level configuration nightmares.**
 
 ## Getting Started
 
-* Run `npm --init` if you don't have a `package.json` yet
+* Run `npm init` if you don't have a `package.json` yet
 * Install:
 
     ```sh
