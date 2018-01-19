@@ -4,7 +4,7 @@ title: faucet-pipeline-js
 ---
 
 The configuration is an array of bundles you want to create. Each entry of the
-array is an object with at least two keys: `entryPoint` is the file that should
+array is an object with at least two keys: `source` is the file that should
 be compiled, and `target` is the file that should be created (the path is, of
 course, modified a little when you use fingerprinting).
 
@@ -20,7 +20,7 @@ might look like this:
 ```js
 module.exports = {
     js: [{
-        entryPoint: "./index.js",
+        source: "./index.js",
         target: "./dist/bundle.js",
         transpiler: {
             features: ["es2015"],

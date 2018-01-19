@@ -26,11 +26,11 @@ typical low-level configuration nightmares.**
     ```javascript
     module.exports = {
         js: [{
-            entryPoint: "./index.js",
+            source: "./index.js",
             target: "./public/app.js"
         }],
         sass: [{
-            entryPoint: "./index.scss",
+            source: "./index.scss",
             target: "./public/app.css"
         }],
         static: [{

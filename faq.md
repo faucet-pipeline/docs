@@ -13,7 +13,7 @@ otherwise provides a distribution – the solution is to skip transpilation ther
 ```javascript
 module.exports = {
     js: [{
-        entryPoint: "index.js",
+        source: "index.js",
         target: "dist/bundle.js",
         transpiler: {
             // ...

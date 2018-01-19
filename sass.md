@@ -4,7 +4,7 @@ title: faucet-pipeline-sass
 ---
 
 The configuration is an array of bundles you want to create. Each entry of the
-array is an object with two keys: `entryPoint` is the file that should be
+array is an object with two keys: `source` is the file that should be
 compiled, and `target` is the file that should be created (the path is, of
 course, modified a little when you use fingerprinting).
 
@@ -25,10 +25,10 @@ The resulting configuration might look something like this:
 ```js
 module.exports = {
     sass: [{
-        entryPoint: "./example.scss",
+        source: "./example.scss",
         target: "./output/example.css"
     }, {
-        entryPoint: "./example2.scss",
+        source: "./example2.scss",
         target: "./output/subfolder/example2.css"
     }]
 };
