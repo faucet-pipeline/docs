@@ -37,12 +37,8 @@ ul {
 	body {
 		display: grid;
 		grid-template-columns: 1fr 200px 500px 1fr;
-		grid-template-areas: '. warning warning .' '. . header .' '. aside main .';
+		grid-template-areas: '. . header .' '. aside main .';
 		grid-column-gap: 15px;
-	}
-
-	.warning {
-		grid-area: warning;
 	}
 
 	header {
@@ -56,12 +52,4 @@ ul {
 	main {
 		grid-area: main;
 	}
-}
-
-.warning {
-	color: #721c24;
-	background-color: #f8d7da;
-	border: 1px solid #f5c6cb;
-	border-radius: .25rem;
-	padding: .75rem 1.25rem;
 }
