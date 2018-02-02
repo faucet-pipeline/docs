@@ -61,9 +61,9 @@ input (Example: `"public/images/background/example.jpg"` and `"public/images"`).
 The return value will be used as the key.
 
 The `value` function receives the path to the generated file *with the
-fingerprint* relative to your configuration file and the target directory as its
-input (Example: `"public/images/background/example-12345.jpg"` and
-`"public/images"`). The return value will be used as the value.
+fingerprint* relative to your configuration file as its input (Example:
+`"public/images/background/example-12345.jpg"` and `"public/images"`). The
+return value will be used as the value.
 
 The target directory is the `target` in the case of faucet-pipeline-static, and
 the dirname of the `target` in the case of faucet-pipeline-js and
