@@ -25,6 +25,6 @@ minimum required. With all that out of the way, we can focus on actually writing
 the code. Thus we can easily recommend it to friends and colleagues and get them
 started in less than a minute.
 
-The work on this project is sponsored by [innoQ](https://www.innoq.com) &
+The work on this project is sponsored by [INNOQ](https://www.innoq.com) &
 [fejo.dk](https://www.fejo.dk). It is used both in production as well as
-internal applications by both companies.
+for internal applications by both companies.
