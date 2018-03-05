@@ -13,9 +13,9 @@ otherwise provides a distribution – the solution is to skip transpilation ther
 ```javascript
 module.exports = {
     js: [{
-        source: "index.js",
-        target: "dist/bundle.js",
-        transpiler: {
+        source: "./index.js",
+        target: "./dist/bundle.js",
+        esnext: {
             // ...
             exclude: ["jquery"]
         }
