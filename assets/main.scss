@@ -37,7 +37,7 @@ ul {
 	body {
 		display: grid;
 		grid-template-columns: 1fr 200px 500px 1fr;
-		grid-template-areas: '. . header .' '. aside main .';
+		grid-template-areas: '. . header .' '. aside main .' '. . footer .' ;
 		grid-column-gap: 15px;
 	}
 
@@ -51,5 +51,9 @@ ul {
 
 	main {
 		grid-area: main;
+	}
+
+	footer {
+		grid-area: footer;
 	}
 }
