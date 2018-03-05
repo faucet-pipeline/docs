@@ -33,3 +33,30 @@ module.exports = {
     }]
 };
 ```
+
+If you don't want to prefix your CSS even though you have a Browserslist
+configuration, you can deactivate it per bundle:
+
+```js
+module.exports = {
+    sass: [{
+        source: "./example.scss",
+        target: "./output/example.css",
+        browserslist: false
+    }]
+};
+```
+
+If you use groups in your Browserslist, faucet-pipeline uses the `default` group
+by default. If you want to choose a different one, you can for example set it to
+"legacy" like this:
+
+```js
+module.exports = {
+    sass: [{
+        source: "./example.scss",
+        target: "./output/example.css",
+        browserslist: "legacy"
+    }]
+};
+```
