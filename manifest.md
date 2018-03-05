@@ -40,7 +40,7 @@ path to where you want your manifest to go.
 ```
 module.exports = {
     manifest: {
-        file: "./path/to/manifest.json"
+        target: "./path/to/manifest.json"
     }
 }
 ```
@@ -51,6 +51,31 @@ By default, the generated manifest will have...
   configuration file as the **key**.
 * The path to the generated file *with the fingerprint* relative to your
   configuration file with a `/` prefixed as the **value**.
+
+If you want a shorter key, you can set `key` to `"short"`. They key will now be
+relative to the respective `target` for each entry. In the case of a single
+file that means you will only have the file name as the key. In the case of a
+directory of files, the key will be relative to that directory.
+
+You can also adjust the value: You can provide a `baseURI` to use something
+other than `/`. You can provide a `webRoot` as a relative path to generate the
+value relative to a different folder (in some frameworks that would be
+`./public`, the folder that is used to serve static files).
+
+Example:
+
+```
+module.exports = {
+    manifest: {
+        target: "./path/to/manifest.json",
+        key: "short",
+        baseURI: "/assets/",
+        webRoot: "./target"
+    }
+}
+```
+
+## Advanced Configuration
 
 You can manipulate both the key and the value with a function (you can provide
 none, one or both):
@@ -68,29 +93,3 @@ return value will be used as the value.
 The target directory is the `target` in the case of faucet-pipeline-static, and
 the dirname of the `target` in the case of faucet-pipeline-js and
 faucet-pipeline-sass.
-
-If your Web framework hosts static files in a folder called `public`, you can
-write your files there and then use the value function:
-
-```js
-f => `/${path.relative("public", f)}`
-```
-
-If you want to type less when fetching from the manifest, you can generate the
-key relative to the respective target directory:
-
-```
-(f, targetDir) => path.relative(targetDir, f)
-```
-
-Combined, this would look like this:
-
-```
-module.exports = {
-    manifest: {
-        file: "./path/to/manifest.json",
-        key: (f, targetDir) => path.relative(targetDir, f),
-        value: f => `/${path.relative("public", f)}`
-    }
-}
-```
