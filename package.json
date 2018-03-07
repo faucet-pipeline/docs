@@ -10,7 +10,7 @@
 		"compile:prod": "faucet --compact --fingerprint"
 	},
 	"dependencies": {
-		"prismjs": "^1.11.0"
+		"prismjs": "^1.12.2"
 	},
 	"devDependencies": {
 		"commonmark": "^0.28.1",
@@ -19,6 +19,7 @@
 		"faucet-pipeline-sass": "^1.0.0-rc.2",
 		"faucet-pipeline-static": "^1.0.0-rc.2",
 		"nodemon": "^1.17.1",
+		"normalize.css": "^8.0.0",
 		"npm-run-all": "^4.1.2",
 		"servedir": "^1.0.1"
 	}

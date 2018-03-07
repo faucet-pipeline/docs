@@ -1,0 +1,20 @@
+.grid {
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: $breakpoint-md) {
+	.grid {
+		display: grid;
+		grid-template-columns: 30% 70%;
+		grid-template-areas:
+		"aside main";
+		max-width: 90%;
+	}
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+	.grid {
+		max-width: 70%;
+	}
+}
