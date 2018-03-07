@@ -1,0 +1,26 @@
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-height: 5rem;
+	margin-top: 2rem;
+	padding: 1rem 1.5rem;
+	background-color: $faucet-blue;
+}
+
+.footer-links {
+	display: flex;
+	align-items: center;
+}
+
+.footer-logo {
+	width: 8rem;
+}
+
+.footer-link {
+	display: block;
+
+	& + & {
+		margin-left: 1.5rem;
+	}
+}

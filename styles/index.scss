@@ -1,2 +1,14 @@
-@import "./basics";
-@import "../components/layout/layout";
+@import "normalize.css/normalize";
+
+@import "./settings/colors";
+@import "./settings/breakpoints";
+@import "./settings/base";
+
+@import "./base";
+
+@import "../components/footer/footer";
+@import "../components/grid/grid";
+@import "../components/header/header";
+@import "../components/aside/aside";
+@import "../components/main/main";
+@import "../components/nav_toc/nav_toc";

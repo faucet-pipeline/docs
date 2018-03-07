@@ -1,0 +1,32 @@
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: "Titillium Web", sans-serif;
+	color: $body-color;
+}
+
+p {
+	line-height: $base-line-height;
+}
+
+strong {
+	font-weight: 700;
+}
+
+a {
+	color: $link-color;
+	transition: color ease-in-out 0.2s;
+
+	&:hover,
+	&:focus {
+		color: $link-color-hover;
+	}
+}
+
+@media screen and (min-width: $breakpoint-md) {
+	html {
+		font-size: 18px;
+	}
+}
