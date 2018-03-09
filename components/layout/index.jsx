@@ -1,3 +1,5 @@
+import Header from "./macros/header";
+import Footer from "./macros/footer";
 import { assetURI } from "../../views/util";
 import { createElement } from "complate-stream";
 
@@ -23,12 +25,7 @@ export default function DefaultLayout({ title, subtitle, docTitle }, ...children
 		</head>
 
 		<body>
-			<header class="site-header">
-				<p class="tagline">{subtitle}</p>
-				<div class="logo">
-					<img src={assetURI("faucet-logotype.png")} alt={shortName} />
-				</div>
-			</header>
+			<Header shortName={shortName} tagline={subtitle} />
 
 			<div class="grid">
 				<aside class="aside">
@@ -73,29 +70,26 @@ export default function DefaultLayout({ title, subtitle, docTitle }, ...children
 				</main>
 			</div>
 
-			<Footer />
+			<Footer shortName={shortName}>
+				{/* eslint-disable indent */}
+				<ImageLink href="https://www.npmjs.com/package/faucet-pipeline"
+						src={"npm.svg"} alt="npm" />
+
+				<ImageLink href="https://github.com/faucet-pipeline"
+						src={"github.svg"} alt="GitHub" />
+
+				<ImageLink href="https://twitter.com/moonbeamlabs"
+						src={"twitter.svg"} alt="Twitter" />
+				{/* eslint-enable indent */}
+			</Footer>
 		</body>
 	</html>;
 }
 
-function Footer() {
-	return <footer class="site-footer">
-		<img src={assetURI("faucet-logotype-monochrome.svg")} alt={shortName} />
-
-		<nav>
-			<a href="https://www.npmjs.com/package/faucet-pipeline">
-				<img src={assetURI("npm.svg")} alt="npm" />
-			</a>
-
-			<a href="https://github.com/faucet-pipeline">
-				<img src={assetURI("github.svg")} alt="GitHub" />
-			</a>
-
-			<a href="https://www.npmjs.com/package/faucet-pipeline">
-				<img src={assetURI("twitter.svg")} alt="Twitter" />
-			</a>
-		</nav>
-	</footer>;
+function ImageLink({ href, src, alt }) {
+	return <a href={href}>
+		<img src={assetURI(src)} alt={alt} />
+	</a>;
 }
 
 function renderScripts(items) {
