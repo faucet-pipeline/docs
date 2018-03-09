@@ -1,4 +1,5 @@
 import Header from "./macros/header";
+import Nav, { NavGroup, NavLink } from "./macros/nav";
 import Footer from "./macros/footer";
 import { assetURI } from "../../views/util";
 import { createElement } from "complate-stream";
@@ -28,40 +29,33 @@ export default function DefaultLayout({ title, subtitle, docTitle }, ...children
 			<Header shortName={shortName} tagline={subtitle} />
 
 			<div class="grid">
-				<aside class="aside">
-					<nav class="nav-toc">
-						<ul class="nav-toc-list">
-							<li><a href="/" class="nav-toc-link nav-toc-link--active">Introduction</a></li>
-							<li><a href="/cli" class="nav-toc-link">Command Line Interface</a></li>
-							<li><a href="/manifest" class="nav-toc-link">Fingerprinting & Manifest</a></li>
-							<li><a href="/watching" class="nav-toc-link">File Watching</a></li>
+				<Nav>
+					<NavLink href="/" selected>Introduction</NavLink>
+					<NavLink href="/cli">Command-Line Interface</NavLink>
+					<NavLink href="/manifest">Fingerprinting & Manifest</NavLink>
+					<NavLink href="/watching">File Watching</NavLink>
 
-							<li>Pipelines</li>
-							<ul class="nav-toc-list">
-								<li><a href="/js" class="nav-toc-link">JavaScript</a></li>
-								<li><a href="/typescript" class="nav-toc-link">TypeScript</a></li>
-								<li><a href="/sass" class="nav-toc-link">Sass</a></li>
-								<li><a href="/static" class="nav-toc-link">Static</a></li>
-							</ul>
+					<NavGroup label="Pipelines">
+						<NavLink href="/js">JavaScript</NavLink>
+						<NavLink href="/typescript">TypeScript</NavLink>
+						<NavLink href="/sass">Sass</NavLink>
+						<NavLink href="/static">Static</NavLink>
+					</NavGroup>
 
-							<li>Integration</li>
-							<ul class="nav-toc-list">
-								<li><a href="/rails" class="nav-toc-link">Rails</a></li>
-								<li><a href="/spring-boot" class="nav-toc-link">Spring Boot</a></li>
-							</ul>
+					<NavGroup label="Integration">
+						<NavLink href="/rails">Rails</NavLink>
+						<NavLink href="/spring-boot">Spring Boot</NavLink>
+					</NavGroup>
 
-							<li>Contributing</li>
-							<ul class="nav-toc-list">
-								<li><a href="/contributing" class="nav-toc-link">In General</a></li>
-								<li><a href="/build-pipeline" class="nav-toc-link">Build a Pipeline</a></li>
-								<li><a href="/build-integration" class="nav-toc-link">Build an Integration</a></li>
-							</ul>
+					<NavGroup label="Contributing">
+						<NavLink href="/contributing">In General</NavLink>
+						<NavLink href="/build-pipeline">Build a Pipeline</NavLink>
+						<NavLink href="/build-integration">Build an Integration</NavLink>
+					</NavGroup>
 
-							<li><a href="/faq" class="nav-toc-link">Troubleshooting / FAQ</a></li>
-							<li><a href="/background" class="nav-toc-link">Background & Sponsors</a></li>
-						</ul>
-					</nav>
-				</aside>
+					<NavLink href="/faq">Troubleshooting / FAQ</NavLink>
+					<NavLink href="/background">Background & Sponsors</NavLink>
+				</Nav>
 
 				<main id="main">
 					{children}
