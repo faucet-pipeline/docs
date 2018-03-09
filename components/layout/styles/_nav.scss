@@ -1,0 +1,20 @@
+.site-nav {
+	ul {
+		padding: 0;
+		line-height: $base-line-height;
+		list-style: none;
+
+		ul {
+			padding-left: 1rem;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+	li.selected a {
+		&:before {
+			content: "👉 "
+		}
+	}
+}
