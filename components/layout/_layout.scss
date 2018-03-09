@@ -1,0 +1,10 @@
+@import "./styles/header";
+@import "./styles/footer";
+
+.site-nav {
+	grid-area: aside;
+}
+
+main {
+	grid-area: main;
+}
