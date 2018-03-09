@@ -2,8 +2,28 @@
 @import "./styles/nav";
 @import "./styles/footer";
 
+.main-wrapper {
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: $breakpoint-md) {
+	.main-wrapper {
+		display: grid;
+		grid-template-columns: 30% 70%;
+		grid-template-areas: "nav main";
+		max-width: 90%;
+	}
+}
+
+@media screen and (min-width: $breakpoint-lg) {
+	.main-wrapper {
+		max-width: 70%;
+	}
+}
+
 .site-nav {
-	grid-area: aside;
+	grid-area: nav;
 }
 
 main {
