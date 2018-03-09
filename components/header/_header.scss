@@ -1,68 +1,70 @@
-.header {
+.site-header {
 	display: flex;
 	padding: 0 0 0 1rem;
 	background-image: linear-gradient(to right bottom, $faucet-blue 50%, $white 50%);
-}
 
-.header-left {
-	flex-basis: 50%;
-	padding-top: 1rem;
-	font-weight: 700;
-	color: $white;
-}
+	.tagline {
+		flex-basis: 50%;
+		margin: 0;
+		padding-top: 1rem;
+		line-height: inherit;
+		font-weight: 700;
+		color: $white;
+	}
 
-.header-right {
-	flex-basis: 70%;
-	align-self: flex-start;
-}
+	.logo {
+		flex-basis: 70%;
+		align-self: flex-start;
 
-.header-logo {
-	max-width: 100%;
+		img {
+			max-width: 100%;
+		}
+	}
 }
 
 @media screen and (min-width: $breakpoint-xs-sm) {
-	.header-left {
+	.site-header .tagline {
 		font-size: 1.25rem;
 	}
 }
 
 @media screen and (min-width: $breakpoint-sm) {
-	.header {
+	.site-header {
 		padding: 1rem 2rem 0;
-	}
 
-	.header-left {
-		font-size: 1.5rem;
-		padding: 1rem 0;
+		.tagline {
+			padding: 1rem 0;
+			font-size: 1.5rem;
+		}
 	}
 }
 
 @media screen and (min-width: $breakpoint-md) {
-	.header-left {
+	.site-header .tagline {
 		font-size: 2rem;
 	}
 }
 
 @media screen and (min-width: $breakpoint-md-lg) {
-	.header-left {
+	.site-header .tagline {
 		font-size: 3rem;
 	}
 }
 
 @media screen and (min-width: $breakpoint-lg) {
-	.header-left {
-		padding: 2rem 1rem;
+	.site-header .tagline {
 		font-size: 3.5rem;
+		padding: 2rem 1rem;
 	}
 }
 
 @media screen and (min-width: $breakpoint-lg-xl) {
-	.header {
+	.site-header {
 		padding: 2rem 3rem 0;
-	}
 
-	.header-left {
-		font-size: 4rem;
-		padding: 2rem 0;
+		.tagline {
+			padding: 2rem 0;
+			font-size: 4rem;
+		}
 	}
 }
