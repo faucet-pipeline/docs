@@ -28,7 +28,7 @@ export default function DefaultLayout({ title, subtitle, docTitle }, ...children
 		<body>
 			<Header shortName={shortName} tagline={subtitle} />
 
-			<div class="grid">
+			<section class="main-wrapper">
 				<Nav>
 					<NavLink href="/" selected>Introduction</NavLink>
 					<NavLink href="/cli">Command-Line Interface</NavLink>
@@ -62,7 +62,7 @@ export default function DefaultLayout({ title, subtitle, docTitle }, ...children
 
 					{renderScripts(scripts)}
 				</main>
-			</div>
+			</section>
 
 			<Footer shortName={shortName}>
 				{/* eslint-disable indent */}
