@@ -8,6 +8,8 @@ let stylesheets = [
 ];
 let scripts = [assetURI("prism.js")];
 
+let shortName = "faucet";
+
 export default function DefaultLayout({ title, subtitle, docTitle }, ...children) {
 	return <html>
 		<head>
@@ -24,7 +26,7 @@ export default function DefaultLayout({ title, subtitle, docTitle }, ...children
 			<header class="site-header">
 				<p class="tagline">{subtitle}</p>
 				<div class="logo">
-					<img src={assetURI("faucet-logotype.png")} alt="faucet" />
+					<img src={assetURI("faucet-logotype.png")} alt={shortName} />
 				</div>
 			</header>
 
@@ -71,23 +73,29 @@ export default function DefaultLayout({ title, subtitle, docTitle }, ...children
 				</main>
 			</div>
 
-			<footer class="footer">
-				<img src="img/faucet-logotype-monochrome.svg" alt="faucet" class="footer-logo" />
-
-				<div class="footer-links">
-					<a href="https://www.npmjs.com/package/faucet-pipeline" class="footer-link">
-						<img src="/img/npm.svg" alt="npm" class="footer-link-image" />
-					</a>
-					<a href="https://github.com/faucet-pipeline" class="footer-link">
-						<img src="/img/github.svg" alt="GitHub" class="footer-link-image" />
-					</a>
-					<a href="https://www.npmjs.com/package/faucet-pipeline" class="footer-link">
-						<img src="/img/twitter.svg" alt="Twitter" class="footer-link-image" />
-					</a>
-				</div>
-			</footer>
+			<Footer />
 		</body>
 	</html>;
+}
+
+function Footer() {
+	return <footer class="site-footer">
+		<img src={assetURI("faucet-logotype-monochrome.svg")} alt={shortName} />
+
+		<nav>
+			<a href="https://www.npmjs.com/package/faucet-pipeline">
+				<img src={assetURI("npm.svg")} alt="npm" />
+			</a>
+
+			<a href="https://github.com/faucet-pipeline">
+				<img src={assetURI("github.svg")} alt="GitHub" />
+			</a>
+
+			<a href="https://www.npmjs.com/package/faucet-pipeline">
+				<img src={assetURI("twitter.svg")} alt="Twitter" />
+			</a>
+		</nav>
+	</footer>;
 }
 
 function renderScripts(items) {

@@ -1,4 +1,4 @@
-.footer {
+.site-footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -6,21 +6,21 @@
 	margin-top: 2rem;
 	padding: 1rem 1.5rem;
 	background-color: $faucet-blue;
-}
 
-.footer-links {
-	display: flex;
-	align-items: center;
-}
+	> img {
+		width: 8rem;
+	}
 
-.footer-logo {
-	width: 8rem;
-}
+	nav {
+		display: flex;
+		align-items: center;
 
-.footer-link {
-	display: block;
+		a {
+			display: block;
 
-	& + & {
-		margin-left: 1.5rem;
+			& + a {
+				margin-left: 1.5rem;
+			}
+		}
 	}
 }
