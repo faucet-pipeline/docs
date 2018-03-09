@@ -21,10 +21,10 @@ export default function DefaultLayout({ title, subtitle, docTitle }, ...children
 		</head>
 
 		<body>
-			<header class="header">
-				<div class="header-left">{subtitle}</div>
-				<div class="header-right">
-					<img src="img/faucet-logotype.png" alt="faucet" class="header-logo" />
+			<header class="site-header">
+				<p class="tagline">{subtitle}</p>
+				<div class="logo">
+					<img src={assetURI("faucet-logotype.png")} alt="faucet" />
 				</div>
 			</header>
 
