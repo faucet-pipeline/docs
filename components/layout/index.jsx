@@ -2,8 +2,12 @@ import Header from "./macros/header";
 import Nav, { NavGroup, NavLink } from "./macros/nav";
 import Footer from "./macros/footer";
 import { name, shortName, tagline, claim } from "../../content/defaults";
-import { assetURI } from "../../views/util";
+import { assetURI, repr } from "../../views/util";
 import { createElement, safe } from "complate-stream";
+
+let layouts = {
+	"front-page": true
+};
 
 let stylesheets = [
 	assetURI("bundle.css"),
@@ -12,20 +16,24 @@ let stylesheets = [
 ];
 let scripts = [assetURI("prism.js")];
 
-export default function DefaultLayout({ title, docTitle = `${title} | ${name}` },
+export default function DefaultLayout({ title, docTitle, layout },
 		...children) {
+	if(!layouts[layout]) {
+		throw new Error(`invalid page layout: ${repr(layout)}`);
+	}
+
 	return <html>
 		<head>
 			<meta charset="utf-8" />
-			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<title>{docTitle || `${title} | ${name}`}</title>
 
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<meta name="description" content={claim} />
-			<title>{docTitle}</title>
 
 			{renderStyleSheets(stylesheets)}
 		</head>
 
-		<body>
+		<body class={layout}>
 			<Header shortName={shortName} tagline={safe(tagline)} />
 
 			<section class="main-wrapper">
