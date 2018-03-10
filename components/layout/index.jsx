@@ -1,8 +1,9 @@
 import Header from "./macros/header";
 import Nav, { NavGroup, NavLink } from "./macros/nav";
 import Footer from "./macros/footer";
+import { name, shortName, tagline, claim } from "../../content/defaults";
 import { assetURI } from "../../views/util";
-import { createElement } from "complate-stream";
+import { createElement, safe } from "complate-stream";
 
 let stylesheets = [
 	assetURI("bundle.css"),
@@ -11,22 +12,21 @@ let stylesheets = [
 ];
 let scripts = [assetURI("prism.js")];
 
-let shortName = "faucet";
-
-export default function DefaultLayout({ title, subtitle, docTitle }, ...children) {
+export default function DefaultLayout({ title, docTitle = `${title} | ${name}` },
+		...children) {
 	return <html>
 		<head>
 			<meta charset="utf-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-			<meta name="description" content={subtitle} />
+			<meta name="description" content={claim} />
 			<title>{docTitle}</title>
 
 			{renderStyleSheets(stylesheets)}
 		</head>
 
 		<body>
-			<Header shortName={shortName} tagline={subtitle} />
+			<Header shortName={shortName} tagline={safe(tagline)} />
 
 			<section class="main-wrapper">
 				<Nav>
