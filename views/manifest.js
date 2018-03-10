@@ -1,1 +1,1 @@
-export * from "./site_index";
+export * from "./front_page";
