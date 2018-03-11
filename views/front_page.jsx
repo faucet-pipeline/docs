@@ -1,4 +1,4 @@
-import DefaultLayout from "../components/layout";
+import DefaultLayout from "../lib/components/layout";
 import renderPage from "./util/markdown";
 import { claim } from "../content/defaults";
 import { Fragment, createElement, safe } from "complate-stream";

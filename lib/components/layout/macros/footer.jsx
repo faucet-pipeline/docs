@@ -1,4 +1,4 @@
-import { assetURI } from "../../../views/util";
+import { assetURI } from "../../../../views/util";
 import { createElement } from "complate-stream";
 
 let logo = assetURI("faucet-logotype-monochrome.svg");

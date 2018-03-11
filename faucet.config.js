@@ -3,7 +3,7 @@
 let site = "./dist/site";
 
 module.exports = {
-	watchDirs: ["./components", "./styles", "./views"],
+	watchDirs: ["./lib", "./views"],
 	manifest: {
 		target: "./dist/manifest.json",
 		key: "short",
@@ -11,7 +11,7 @@ module.exports = {
 		baseURI: "./"
 	},
 	sass: [{
-		source: "./styles/index.scss",
+		source: "./lib/styles/index.scss",
 		target: `${site}/bundle.css`
 	}],
 	js: [{
@@ -22,7 +22,7 @@ module.exports = {
 		jsx: { pragma: "createElement" }
 	}],
 	static: [{
-		source: "./styles/img",
+		source: "./lib/images",
 		target: `${site}/img`
 	}, {
 		source: "prismjs/prism.js",
