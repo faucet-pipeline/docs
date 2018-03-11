@@ -14,7 +14,10 @@ let stylesheets = [
 	assetURI("prism.css"),
 	"https://fonts.googleapis.com/css?family=Titillium+Web:400,700"
 ];
-let scripts = [assetURI("prism.js")];
+let scripts = [
+	assetURI("prism.js"),
+	assetURI("app.js")
+];
 
 export default function DefaultLayout({ title, docTitle, layout },
 		...children) {
