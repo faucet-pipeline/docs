@@ -25,6 +25,9 @@ module.exports = {
 		source: "./lib/images",
 		target: `${site}/img`
 	}, {
+		source: "./lib/app.js",
+		target: `${site}/app.js`
+	}, {
 		source: "prismjs/prism.js",
 		target: `${site}/prism.js`
 	}, {
