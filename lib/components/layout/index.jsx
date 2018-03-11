@@ -1,8 +1,8 @@
 import Header from "./macros/header";
 import Nav, { NavGroup, NavLink } from "./macros/nav";
 import Footer from "./macros/footer";
-import { name, shortName, tagline, claim } from "../../content/defaults";
-import { assetURI, repr } from "../../views/util";
+import { name, shortName, tagline, claim } from "../../../content/defaults";
+import { assetURI, repr } from "../../../views/util";
 import { createElement, safe } from "complate-stream";
 
 let layouts = {
