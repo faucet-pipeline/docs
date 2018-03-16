@@ -19,10 +19,19 @@ a[href="#main"] { // skip link
 	margin: 0 auto;
 }
 
+.site-nav {
+	grid-area: nav;
+}
+
+main {
+	grid-area: main;
+}
+
 @media screen and (min-width: $breakpoint-md) {
 	.main-wrapper {
 		display: grid;
-		grid-template-columns: 30% 70%;
+		grid-template-columns: 30% 69%;
+		grid-column-gap: 1%;
 		grid-template-areas: "nav main";
 		max-width: 90%;
 	}
@@ -32,12 +41,4 @@ a[href="#main"] { // skip link
 	.main-wrapper {
 		max-width: 70%;
 	}
-}
-
-.site-nav {
-	grid-area: nav;
-}
-
-main {
-	grid-area: main;
 }
