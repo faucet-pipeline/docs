@@ -37,6 +37,8 @@ export default function DefaultLayout({ title, docTitle, layout },
 		</head>
 
 		<body class={layout}>
+			<a href="#main">skip to content</a>
+
 			<Header shortName={shortName} tagline={safe(tagline)} />
 
 			<section class="main-wrapper">
