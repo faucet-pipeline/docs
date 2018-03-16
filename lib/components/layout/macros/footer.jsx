@@ -5,7 +5,9 @@ let logo = assetURI("faucet-logotype-monochrome.svg");
 
 export default function Footer({ shortName }, ...links) {
 	return <footer class="site-footer">
-		<img src={logo} alt={shortName} class="logo" />
+		<a href="/">
+			<img src={logo} alt={shortName} class="logo" />
+		</a>
 
 		<nav>
 			{links}
