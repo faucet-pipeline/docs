@@ -7,7 +7,13 @@ body {
 	color: $body-color;
 }
 
+h2 {
+	margin: $spacer-block 0 $spacer-heading;
+	line-height: $base-line-height;
+}
+
 p {
+	margin: $base-block-margin;
 	line-height: $base-line-height;
 }
 

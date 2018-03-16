@@ -1,0 +1,8 @@
+// page-specific styling
+.front-page {
+	main > pre.language-cli {
+		float: right;
+		margin-left: 0.5rem;
+		border-radius: $base-corner-radius;
+	}
+}

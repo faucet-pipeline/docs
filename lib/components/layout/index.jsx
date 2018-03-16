@@ -41,31 +41,37 @@ export default function DefaultLayout({ title, docTitle, layout },
 
 			<section class="main-wrapper">
 				<Nav>
-					<NavLink href="/" selected>Introduction</NavLink>
-					<NavLink href="/cli">Command-Line Interface</NavLink>
-					<NavLink href="/manifest">Fingerprinting & Manifest</NavLink>
-					<NavLink href="/watching">File Watching</NavLink>
-
-					<NavGroup label="Pipelines">
-						<NavLink href="/js">JavaScript</NavLink>
-						<NavLink href="/typescript">TypeScript</NavLink>
-						<NavLink href="/sass">Sass</NavLink>
-						<NavLink href="/static">Static</NavLink>
+					<NavGroup label="Introduction">
+						<NavLink href="index.html" selected>About faucet</NavLink>
+						<NavLink href="philosophy.html">Motivation & Philosophy</NavLink>
 					</NavGroup>
 
-					<NavGroup label="Integration">
-						<NavLink href="/rails">Rails</NavLink>
-						<NavLink href="/spring-boot">Spring Boot</NavLink>
+					<NavLink href="cli.html">Command-Line Interface</NavLink>
+
+					<NavLink href="sass.html">CSS / Sass</NavLink>
+
+					<NavGroup label="JavaScript">
+						<NavLink href="js.html">ES5 & ES6+</NavLink>
+						<NavLink href="typescript.html">TypeScript</NavLink>
+						<NavLink href="jsx.html">JSX</NavLink>
 					</NavGroup>
 
-					<NavGroup label="Contributing">
-						<NavLink href="/contributing">In General</NavLink>
-						<NavLink href="/build-pipeline">Build a Pipeline</NavLink>
-						<NavLink href="/build-integration">Build an Integration</NavLink>
+					<NavLink href="static.html">Static Files</NavLink>
+
+					<NavLink href="manifest.html">Fingerprinting & Manifest</NavLink>
+					<NavLink href="browsers.html">Browserslist</NavLink>
+
+					<NavGroup label="Framework Integration">
+						<NavLink href="rails.html">Ruby on Rails</NavLink>
+						<NavLink href="spring.html">Spring Framework</NavLink>
 					</NavGroup>
 
-					<NavLink href="/faq">Troubleshooting / FAQ</NavLink>
-					<NavLink href="/background">Background & Sponsors</NavLink>
+					<NavGroup label="Community">
+						<NavLink href="faq.html">Frequently Asked Questions</NavLink>
+						<NavLink href="contributing.html">Contributing</NavLink>
+						<NavLink href="alternatives.html">Alternatives</NavLink>
+						<NavLink href="background.html">Background & Sponsors</NavLink>
+					</NavGroup>
 				</Nav>
 
 				<main id="main">
