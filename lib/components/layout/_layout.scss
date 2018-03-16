@@ -1,14 +1,7 @@
+@import "./styles/pages";
 @import "./styles/header";
 @import "./styles/nav";
 @import "./styles/footer";
-
-// page-specific styling
-body.front-page main {
-	p:first-child a {
-		font-weight: bold;
-		text-decoration-style: double;
-	}
-}
 
 .main-wrapper {
 	max-width: 90%;

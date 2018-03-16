@@ -1,0 +1,6 @@
+// Prism overrides
+html { // required for specificity
+	pre[class*="language-"] {
+		margin: $base-block-margin; // for consistency
+	}
+}
