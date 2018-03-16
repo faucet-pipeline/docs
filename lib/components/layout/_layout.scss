@@ -3,6 +3,17 @@
 @import "./styles/nav";
 @import "./styles/footer";
 
+a[href="#main"] { // skip link
+	position: absolute;
+	top: -2rem;
+	left: 0.5rem;
+	color: $white;
+
+	&:focus {
+		top: 0.5rem;
+	}
+}
+
 .main-wrapper {
 	max-width: 90%;
 	margin: 0 auto;
