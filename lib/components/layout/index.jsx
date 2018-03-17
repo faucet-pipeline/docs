@@ -42,6 +42,10 @@ export default function DefaultLayout({ title, docTitle, layout },
 			<Header shortName={shortName} tagline={safe(tagline)} />
 
 			<section class="main-wrapper">
+				<main id="main">
+					{children}
+				</main>
+
 				<Nav>
 					<NavGroup label="Introduction">
 						<NavLink href="index.html" selected>About faucet</NavLink>
@@ -75,12 +79,6 @@ export default function DefaultLayout({ title, docTitle, layout },
 						<NavLink href="background.html">Background & Sponsors</NavLink>
 					</NavGroup>
 				</Nav>
-
-				<main id="main">
-					{children}
-
-					{renderScripts(scripts)}
-				</main>
 			</section>
 
 			<Footer shortName={shortName}>
@@ -95,6 +93,8 @@ export default function DefaultLayout({ title, docTitle, layout },
 						src={"twitter.svg"} alt="Twitter" />
 				{/* eslint-enable indent */}
 			</Footer>
+
+			{renderScripts(scripts)}
 		</body>
 	</html>;
 }
