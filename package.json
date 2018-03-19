@@ -5,6 +5,7 @@
 		"server": "servedir ./dist/site",
 		"build": "node ./index.js",
 		"build:watch": "nodemon --delay 1 -w dist/views.js -w content -e md -x 'node ./index.js' < /dev/null",
+		"build:prod": "npm-run-all compile:prod build",
 		"compile": "faucet --compact",
 		"compile:watch": "npm run compile -- --watch",
 		"compile:prod": "faucet --compact --fingerprint"
