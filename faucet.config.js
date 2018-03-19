@@ -15,7 +15,7 @@ module.exports = {
 		target: `${site}/bundle.css`
 	}],
 	js: [{
-		source: "./views/index.js",
+		source: "./views/index.jsx",
 		target: "./dist/views.js",
 		format: "cjs",
 		moduleName: "render",

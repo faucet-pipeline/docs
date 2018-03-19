@@ -1,13 +1,11 @@
 import Header from "./macros/header";
 import Nav, { NavGroup, NavLink } from "./macros/nav";
 import Footer from "./macros/footer";
-import { name, shortName, tagline, claim } from "../../../content/defaults";
+import { shortName, tagline } from "../../../content/defaults";
 import { assetURI, repr } from "../../../views/util";
 import { createElement, safe } from "complate-stream";
 
-let layouts = {
-	"front-page": true
-};
+let layouts = new Set(["front-page"]);
 
 let stylesheets = [
 	assetURI("bundle.css"),
@@ -19,16 +17,18 @@ let scripts = [
 	assetURI("app.js")
 ];
 
-export default function DefaultLayout({ title, docTitle, layout },
-		...children) {
-	if(!layouts[layout]) {
+export default function DefaultLayout({ docTitle, claim, layout }, ...children) {
+	if(!docTitle) {
+		throw new Error("missing document title");
+	}
+	if(layout && !layouts.has(layout)) {
 		throw new Error(`invalid page layout: ${repr(layout)}`);
 	}
 
 	return <html>
 		<head>
 			<meta charset="utf-8" />
-			<title>{docTitle || `${title} | ${name}`}</title>
+			<title>{docTitle}</title>
 
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<meta name="description" content={claim} />
