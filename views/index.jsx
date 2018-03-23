@@ -2,13 +2,23 @@ import loadPage from "./util/markdown";
 import DefaultLayout from "../lib/components/layout";
 import { fullName, claims } from "../content/defaults";
 import Renderer, { Fragment, createElement, safe } from "complate-stream";
+let path = require("path");
+
+let CONFIG = "ssg.config.js";
+
+let root = path.resolve(__dirname, ".."); // NB: relative to bundle
+let { content, slugs } = readConfig(root);
+let sourceDir = path.resolve(root, content.dir);
+slugs = path.resolve(root, slugs);
+
+slugs = require(slugs);
 
 let { registerView, renderView } = new Renderer();
 
-let pages = ["front-page", "philosophy"];
-pages.forEach(pageName => {
-	let view = _ => deferred(loadPage(pageName), render);
-	registerView(view, pageName);
+slugs.forEach(slug => {
+	let filepath = path.resolve(sourceDir, `${slug}.md`);
+	let view = _ => deferred(loadPage(filepath), render);
+	registerView(view, slug);
 });
 
 export default renderView;
@@ -31,4 +41,9 @@ function deferred(prom, fn) {
 			callback(el);
 		});
 	}}</Fragment>;
+}
+
+function readConfig(referenceDir) {
+	let filepath = path.resolve(referenceDir, CONFIG);
+	return require(filepath);
 }

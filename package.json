@@ -1,11 +1,12 @@
 {
 	"scripts": {
-		"start": "npm-run-all compile --parallel server compile:watch build:watch",
+		"start": "npm-run-all build:slugs compile --parallel server compile:watch build:watch",
 		"test": "eslint --cache --ext .js --ext .jsx *.js lib/components views && echo ✓",
 		"server": "servedir ./dist/site",
-		"build": "node ./index.js",
-		"build:watch": "nodemon --delay 1 -w dist/views.js -w content -e md -x 'node ./index.js' < /dev/null",
-		"build:prod": "npm-run-all compile:prod build",
+		"build:slugs": "./index.js slugs",
+		"build:pages": "./index.js pages",
+		"build:watch": "nodemon --delay 1 -w dist/views.js -w content -e md -x 'node ./index.js pages' < /dev/null",
+		"build:prod": "npm-run-all build:slugs compile:prod build:pages",
 		"compile": "faucet --compact",
 		"compile:watch": "npm run compile -- --watch",
 		"compile:prod": "faucet --compact --fingerprint"
