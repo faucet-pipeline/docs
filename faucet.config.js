@@ -17,8 +17,8 @@ module.exports = {
 	js: [{
 		source: "./views/index.jsx",
 		target: "./dist/views.js",
-		format: "cjs",
-		moduleName: "render",
+		fingerprint: false,
+		format: "CommonJS",
 		jsx: { pragma: "createElement" }
 	}],
 	static: [{
