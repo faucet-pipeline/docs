@@ -4,6 +4,13 @@ layout: front-page
 $ faucet --watch
 ```
 
+* [CSS, Sass etc.](css.html)
+* [JavaScript (ES6)](js.html)
+* [JSX, TypeScript etc.](js.html)
+* [image optimization](images.html)
+* [fingerprinting](fingerprintng.html)
+* [framework integration](frameworks.html)
+
 **faucet-pipeline** takes care of **[pre-processing&nbsp;CSS](css.html)**,
 **[compiling&nbsp;modern&nbsp;JavaScript](js.html)** and framework-independent
 **[fingerprinting](manifest.html)** to take advantage of HTTP caching. It lets you
@@ -12,14 +19,14 @@ build tools: With **minimal configuration** you can take advantage of the
 front-end community's **established tooling**, without worrying about low-level
 details.
 
-Create a CSS bundle from [Sass](http://sass-lang.com) modules:
+Creating a CSS bundle from [Sass](http://sass-lang.com) modules:
 
 ```javascript
     source: "./styles/index.scss",
     target: "./dist/bundle.css"
 ```
 
-Bundle and transpile JavaScript:
+Bundling and transpiling JavaScript:
 
 ```javascript
     source: "./src/index.js",
@@ -27,7 +34,7 @@ Bundle and transpile JavaScript:
     esnext: true // activates ES6 transpiler
 ```
 
-Fingerprint arbitrary files, like fonts and images:
+Fingerprinting arbitrary files, like fonts and images:
 
 ```javascript
     source: "./assets",
@@ -38,15 +45,15 @@ Fingerprint arbitrary files, like fonts and images:
 Getting Started
 ---------------
 
-Let's start by setting up the [JavaScript](js.html) compiler. If you're
-interested in [CSS](css.html) or [static files](static.html) instead, feel free
-to head directly to the respective page.
+In order to avoid unnecessary bloat, you're only required to install the
+functionality you actually need. Let's start with some [JavaScript](js.html):
 
 ```shell
 $ npm install faucet-pipeline-esnext
 ```
 
-Configuration resides in `faucet.config.js`:
+Configuration resides in `faucet.config.js` – in this case, we want to transpile
+modern JavaScript (ES6) to backwards-compatible ES5:
 
 ```javascript
 module.exports = {
@@ -81,9 +88,9 @@ $ npx faucet
 
 (`npx` is merely a
 [shortcut](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
-for commands in `./node_modules/.bin` -- though eventually you might want to
-define [npm scripts](https://docs.npmjs.com/misc/scripts) within `package.json`
-so you can `npm start`, for example.
+for commands in `node_modules/.bin` -- you might also define
+[npm scripts](https://docs.npmjs.com/misc/scripts) to use `npm start`, for
+example.)
 
 That's it! We can now execute that bundle, either in a browser or via Node:
 
@@ -92,5 +99,7 @@ $ node dist/bundle.js
 [info] hello world
 ```
 
-The [JavaScript](js.html) page provides a more detailed explanation, including
-configuration options.
+The [JavaScript docs](js.html) provide a more detailed explanation, including
+configuration options. You might also be interested in [CSS](css.html),
+[images](images.html), [static files](static.html) or
+[fingerprinting](fingerprinting.html).

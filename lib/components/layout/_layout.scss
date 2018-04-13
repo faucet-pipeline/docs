@@ -6,11 +6,12 @@
 a[href="#main"] { // skip link
 	position: absolute;
 	top: -2rem;
-	left: 0.5rem;
+	left: $spacer-default;
+	padding: $spacer-default;
 	color: $white;
 
 	&:focus {
-		top: 0.5rem;
+		top: $spacer-default;
 	}
 }
 
