@@ -17,11 +17,7 @@ export default function SiteNavigation({ currentSlug }) {
 
 		<Link slug="sass">CSS / Sass</Link>
 
-		<NavGroup label="JavaScript">
-			<Link slug="js">ES5 & ES6+</Link>
-			<Link slug="typescript">TypeScript</Link>
-			<Link slug="jsx">JSX</Link>
-		</NavGroup>
+		<Link slug="js">JavaScript</Link>
 
 		<Link slug="static">Static Files</Link>
 
