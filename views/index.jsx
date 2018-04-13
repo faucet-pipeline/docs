@@ -14,7 +14,8 @@ function render({ slug, meta, html }) {
 	let docTitle = title ? `${title} | ${fullName}` : claims.default;
 	let claim = docTitle === claims.default ? claims.alt : claims.default;
 
-	return <DefaultLayout docTitle={docTitle} claim={claim} layout={layout}>
+	return <DefaultLayout docTitle={docTitle} // eslint-disable-next-line indent
+			claim={claim} layout={layout} slug={slug}>
 		{safe(html)}
 	</DefaultLayout>;
 }

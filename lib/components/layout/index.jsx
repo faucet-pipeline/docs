@@ -1,6 +1,6 @@
-import Header from "./macros/header";
-import Nav, { NavGroup, NavLink } from "./macros/nav";
-import Footer from "./macros/footer";
+import SiteHeader from "./macros/header";
+import SiteNavigation from "./macros/nav";
+import SiteFooter from "./macros/footer";
 import { shortName, tagline } from "../../../content/defaults";
 import { assetURI, repr } from "../../../views/util";
 import { createElement, safe } from "complate-stream";
@@ -17,7 +17,7 @@ let scripts = [
 	assetURI("app.js")
 ];
 
-export default function DefaultLayout({ docTitle, claim, layout }, ...children) {
+export default function DefaultLayout({ docTitle, claim, layout, slug }, ...children) {
 	if(!docTitle) {
 		throw new Error("missing document title");
 	}
@@ -39,49 +39,17 @@ export default function DefaultLayout({ docTitle, claim, layout }, ...children) 
 		<body class={layout}>
 			<a href="#main">skip to content</a>
 
-			<Header shortName={shortName} tagline={safe(tagline)} />
+			<SiteHeader shortName={shortName} tagline={safe(tagline)} />
 
 			<section class="main-wrapper">
 				<main id="main">
 					{children}
 				</main>
 
-				<Nav>
-					<NavGroup label="Introduction">
-						<NavLink href="index.html" selected>About faucet</NavLink>
-						<NavLink href="philosophy.html">Motivation & Philosophy</NavLink>
-					</NavGroup>
-
-					<NavLink href="cli.html">Command-Line Interface</NavLink>
-
-					<NavLink href="sass.html">CSS / Sass</NavLink>
-
-					<NavGroup label="JavaScript">
-						<NavLink href="js.html">ES5 & ES6+</NavLink>
-						<NavLink href="typescript.html">TypeScript</NavLink>
-						<NavLink href="jsx.html">JSX</NavLink>
-					</NavGroup>
-
-					<NavLink href="static.html">Static Files</NavLink>
-
-					<NavLink href="manifest.html">Fingerprinting & Manifest</NavLink>
-					<NavLink href="browsers.html">Browserslist</NavLink>
-
-					<NavGroup label="Framework Integration">
-						<NavLink href="rails.html">Ruby on Rails</NavLink>
-						<NavLink href="spring.html">Spring Framework</NavLink>
-					</NavGroup>
-
-					<NavGroup label="Community">
-						<NavLink href="faq.html">Frequently Asked Questions</NavLink>
-						<NavLink href="contributing.html">Contributing</NavLink>
-						<NavLink href="alternatives.html">Alternatives</NavLink>
-						<NavLink href="background.html">Background & Sponsors</NavLink>
-					</NavGroup>
-				</Nav>
+				<SiteNavigation currentSlug={slug} />
 			</section>
 
-			<Footer shortName={shortName}>
+			<SiteFooter shortName={shortName}>
 				{/* eslint-disable indent */}
 				<ImageLink href="https://www.npmjs.com/package/faucet-pipeline"
 						src={"npm.svg"} alt="npm" />
@@ -92,7 +60,7 @@ export default function DefaultLayout({ docTitle, claim, layout }, ...children) 
 				<ImageLink href="https://twitter.com/moonbeamlabs"
 						src={"twitter.svg"} alt="Twitter" />
 				{/* eslint-enable indent */}
-			</Footer>
+			</SiteFooter>
 
 			{renderScripts(scripts)}
 		</body>
