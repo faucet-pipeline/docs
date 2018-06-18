@@ -18,6 +18,8 @@ building your project according to the configuration in the file
   (currently `faucet-pipeline-sass` and `faucet-pipeline-js`). Comments will be
   stripped from the output etc. This doesn't do minification (variable name
   mangling etc.) due to our `view-source:` conviction.
+* `--sourcemaps`: Add inline sourcemaps to all generated files by pipelines that
+    support it (currently `faucet-pipeline-sass` and `faucet-pipeline-js`).
 
 We recommend that you do not use `--fingerprint` with `--watch` (fingerprinting
 is not very useful in development and it also reduces clutter on your disk).
