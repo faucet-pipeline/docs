@@ -25,12 +25,25 @@ module.exports = {
     }]
 
 	plugins: {
-		"name": path.resolve("./path/to/your/plugin")
+        name: {
+            plugin: path.resolve("./path/to/your/plugin"),
+            bucket: "chosen-bucket"
+        }
 	}
 }
 ```
 
-With this configuration, your plugin will be loaded when running `faucet`. We
+With this configuration, your plugin with the name `name` will be loaded from
+the provided path when running `faucet`. You also need to choose one of our four
+"buckets". It is a categorization of the pipelines that determines the order in
+which they will be run. You have the choice between the following buckets – the
+choice depends on the kind of files that your pipeline generates:
+
+* static: Static files like images or fonts
+* scripts: JavaScript/WebAssembly files
+* styles: CSS files
+* markup: HTML files
+
 expect your main module to export a function with the following signature:
 
 ```javascript
@@ -44,12 +57,19 @@ tasks. Each of them is an object with a `source` and a `target` plus any other
 things you need to configure. The assetManager will be described below in its
 own section. `options` is an object with the following keys:
 
-* `watcher` is a [nite-owl](https://github.com/faucet-pipeline/nite-owl) event
-    emitter. Learn more about in in the `watcher` section.
 * `browsers` is the detected [browserslist](https://github.com/ai/browserslist).
     Learn more about it in the `browsers` section.
+* `sourcemaps` is a boolean that indicates if you should add sourcemaps to your
+    generated output (applies to JS and CSS only)
 * `compact` is a boolean that indicates if the user wants a compact output
     format or not.
+
+This function should return a function that runs your pipeline. This function
+takes an optional argument:
+
+* If it is undefined, then run the pipeline
+* Otherwise, it is an array of paths. Only run the pipeline, if changes to these
+    files can change your output.
 
 ## assetManager
 
@@ -89,19 +109,10 @@ let target = assetManager.resolvePath(copyConfig.target, {
 });
 ```
 
-## watcher
-
-`watcher` is a [nite-owl](https://github.com/faucet-pipeline/nite-owl) event
-emitter that emits the event "edit" whenever a file changes. This is only
-provided when the user is running faucet in watch mode. Otherwise it will be
-false. In your plugin, you probably need to do something like this (where
-`rebuild` is the function that takes an array of changed files and runs your
-build again if that's necessary):
+You can also receive entries from the manifest like this:
 
 ```javascript
-if(watcher) {
-    watcher.on("edit", rebuild);
-}
+assetManager.manifest.get(name)
 ```
 
 ## browsers
