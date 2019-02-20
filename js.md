@@ -46,9 +46,9 @@ module.exports = {
 
 ## Compacting
 
-faucet-js offers three options to reduce bundles' file size: `faucet --compact`
-will strip comments and whitespace by default. More extreme reductions can be
-activated via bundles' `compact` setting:
+faucet-js offers three options to reduce a bundle's file size:
+`faucet --compact` will strip comments and empty lines by default.
+More extreme reductions can be activated via the bundle's `compact` setting:
 
 ```js
 module.exports = {
@@ -65,6 +65,6 @@ module.exports = {
 ```
 
 `minify` will additionally remove all non-significant whitespace, `mangle`
-rewrites the source code to shorten variable names. Both of those settings only
-take effect with the `--compact` CLI flag and require faucet-pipeline-jsmin in
-addition to faucet-pipeline-js v2.0.
+will rewrite the source code to shorten variable names. Either setting
+will only take effect with the `--compact` CLI flag and both require
+faucet-pipeline-jsmin in addition to faucet-pipeline-js v2.0.
