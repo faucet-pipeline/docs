@@ -8,6 +8,7 @@ array is an object with at least two keys: `source` is the file that should
 be compiled, and `target` is the file that should be created (the path is, of
 course, modified a little when you use fingerprinting).
 
+
 ## Transpilation
 
 You can also transpile modern JS to JavaScript that works in older browsers. To
@@ -42,28 +43,28 @@ module.exports = {
 };
 ```
 
-## Compact
-Hitherto, when you used the `--compact` flag, _faucet_ only removed empty lines
-and comments from your JavaScript files. As of version 2.0, you can provide
-various options for compression via an additional plugin,
-called `faucet-pipeline-jsmin`. Install it and add the `compact` entry
-to your configuration:
+
+## Compacting
+
+faucet-js offers three options to reduce bundles' file size: `faucet --compact`
+will strip comments and whitespace by default. More extreme reductions can be
+activated via bundles' `compact` setting:
 
 ```js
 module.exports = {
     js: [{
         source: "./index.js",
-        target: "./dist/bundle.js",
+        target: "./dist/bundle.min.js",
         compact: "minify"
+    }, {
+        source: "./index.js",
+        target: "./dist/bundle.mangled.js",
+        compact: "mangle"
     }]
 };
 ```
 
-There you can choose between `minify` and `mangle`. Choose the first option
-to have empty lines, comments and all whitespace removed from your file.
-Choose the latter for the same result, with one addition:
-variable names are mangled and shortened.
-If you do not provide any `compact` option but still use the `--compact` flag,
-you will preserve the previous behavior (and do not need to install
-the plugin `faucet-pipeline-jsmin`).
-
+`minify` will additionally remove all non-significant whitespace, `mangle`
+rewrites the source code to shorten variable names. Both of those settings only
+take effect with the `--compact` CLI flag and require faucet-pipeline-jsmin in
+addition to faucet-pipeline-js v2.0.
