@@ -50,7 +50,10 @@ flag is provided. If you want to compact files, provide the `compact` option in
 your configuration. It is an object that maps file extensions to functions. The
 functions are expected to receive a buffer as their only argument, returning
 either a buffer or a promise wrapped around a buffer. The resulting buffer is
-the compacted version of the provided buffer. Example:
+the compacted version of the provided buffer.
+
+A common use case is compressing images. The following configuration is a good
+starting point:
 
 ```js
 module.exports = {
@@ -58,30 +61,25 @@ module.exports = {
 		source: "./src",
 		target: "./dist",
 		compact: {
+			jpg: require("imagemin-mozjpeg")({ quality: 80 }),
+			png: require("imagemin-pngquant")(),
 			svg: require("imagemin-svgo")()
 		}
     }]
 };
 ```
 
-In this example, all files that have `svg` as their file extension, will be
-compated with [svgo](https://github.com/svg/svgo). `imagemin-svgo` is a package
-that provides a function that follows this convention, like all other packages
-from the [imagemin project](https://github.com/imagemin).
+(the equivalent `compact: "images"` shortcut is deprecated and will be removed
+in a future version)
 
-If you want to compact your images, you can use a preselected number of plugins
-by installing `faucet-pipeline-images` instead of `faucet-pipeline-static` and
-using the following configuration:
+In order to make this work, you need to install these three npm packages:
 
-```js
-module.exports = {
-	static: [{
-		source: "./src",
-		target: "./dist",
-		compact: "images"
-	}]
-};
-```
+* `imagemin-mozjpeg`
+* `imagemin-pngquant`
+* `imagemin-svgo`
 
-This will compact all PNGs, JPGs and SVGs with tools that we currently consider
-a good trade-off between speed and resulting file size.
+In this example, all SVGs will be compressed with
+[svgo](https://github.com/svg/svgo), all PNGs with
+[pngquant](https://github.com/kornelski/pngquant) and all JPGs with
+[mozjpeg](https://github.com/mozilla/mozjpeg). All
+[imagemin](https://github.com/imagemin) plugins can be used in similar fashion.
