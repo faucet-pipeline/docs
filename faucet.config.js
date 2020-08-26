@@ -32,6 +32,9 @@ module.exports = {
 		source: `${titillium}/titillium-web-latin-700.woff2`,
 		target: `${site}/fonts/titillium-web-bold.woff2`
 	}, {
+		source: `${titillium}/titillium-web-latin-400-italic.woff2`,
+		target: `${site}/fonts/titillium-web-italic.woff2`
+	}, {
 		source: "./lib/app.js",
 		target: `${site}/app.js`
 	}, {
