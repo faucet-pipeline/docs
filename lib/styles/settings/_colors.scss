@@ -1,8 +1,12 @@
+$black: #222;
+$dark-gray: #666;
+$light-gray: #AAA;
 $white: #FFF;
 
 $faucet-blue: #37375F;
 $faucet-red: #B7455F;
 
-$body-color: #222;
+$body-color: $black;
 $link-color: $faucet-red;
 $link-color-hover: $faucet-blue;
+$transparent-highlight: #B7455FCC;
