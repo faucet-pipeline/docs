@@ -26,9 +26,15 @@ h2 {
 	line-height: $base-line-height;
 }
 
-p {
+p,
+blockquote {
 	margin: $base-block-margin;
 	line-height: $base-line-height;
+}
+
+blockquote {
+	border-left: 4px solid $transparent-marker;
+	padding-left: 1rem;
 }
 
 strong {

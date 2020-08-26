@@ -2,8 +2,8 @@ title: Motivation & Philosophy
 
 > Given the choice between making something _my_ problem, and making something
 > _the user's_ problem, I'll choose to make it my problem every time.
-
---- [Jeremy Keith](https://adactio.com/journal/7706)
+> 
+> --- [Jeremy Keith](https://adactio.com/journal/7706)
 
 faucet has two primary goals: reducing accidental complexity and promoting
 sustainable source code. As such, it is designed around intentional constraints
