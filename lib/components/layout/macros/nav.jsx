@@ -11,18 +11,16 @@ export default function SiteNavigation({ currentSlug }) {
 		<NavGroup label="Introduction">
 			<Link slug="index" selected>About faucet</Link>
 			<Link slug="philosophy">Motivation & Philosophy</Link>
+			<Link slug="cli">Command-Line Interface</Link>
+			<Link slug="manifest">Fingerprinting & Manifest</Link>
+			<Link slug="browsers">Browserslist</Link>
 		</NavGroup>
 
-		<Link slug="cli">Command-Line Interface</Link>
-
-		<Link slug="sass">CSS / Sass</Link>
-
-		<Link slug="js">JavaScript</Link>
-
-		<Link slug="static">Static Files</Link>
-
-		<Link slug="manifest">Fingerprinting & Manifest</Link>
-		<Link slug="browsers">Browserslist</Link>
+		<NavGroup label="Asset Types">
+			<Link slug="sass">CSS / Sass</Link>
+			<Link slug="js">JavaScript</Link>
+			<Link slug="static">Static Files</Link>
+		</NavGroup>
 
 		<NavGroup label="Framework Integration">
 			<Link slug="rails">Ruby on Rails</Link>

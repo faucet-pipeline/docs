@@ -4,18 +4,28 @@
 		padding: 0;
 		line-height: $base-line-height;
 		list-style: none;
+	}
 
-		ul {
-			padding-left: 1rem;
-		}
+	li {
+		color: $light-gray;
+		padding: 0 $spacer-default;
 	}
 
 	a {
+		color: $dark-gray;
 		text-decoration: none;
+
+		&:hover {
+			color: $body-color;
+		}
 	}
-	li.selected a {
-		&:before {
-			content: "👉 "
+
+	li.selected {
+		background: $transparent-highlight;
+		border-radius: 2px;
+
+		a, a:hover {
+			color: $black;
 		}
 	}
 }
