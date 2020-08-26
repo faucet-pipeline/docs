@@ -1,3 +1,17 @@
+@font-face {
+	font-family: "Titillium Web";
+	font-weight: 400;
+	src: asset-url("titillium-web-regular.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Titillium Web";
+	font-weight: 700;
+	src: asset-url("titillium-web-bold.woff2") format("woff2");
+	font-display: swap;
+}
+
 html {
 	font-size: 16px;
 }
