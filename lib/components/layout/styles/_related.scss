@@ -1,0 +1,10 @@
+.related-links {
+	display: flex;
+	align-items: center;
+
+	a {
+		& + a {
+			margin-left: 1.5rem;
+		}
+	}
+}

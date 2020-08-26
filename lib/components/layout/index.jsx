@@ -1,6 +1,7 @@
 import SiteHeader from "./macros/header";
 import SiteNavigation from "./macros/nav";
 import SiteFooter from "./macros/footer";
+import RelatedLinks from "./macros/related";
 import { shortName, tagline } from "../../../content/defaults";
 import { assetURI, repr } from "../../../views/util";
 import { createElement, safe } from "complate-stream";
@@ -22,6 +23,9 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 	if(layout && !layouts.has(layout)) {
 		throw new Error(`invalid page layout: ${repr(layout)}`);
 	}
+
+	// front page is baroque, other pages are tiny
+	let tiny = layout !== "front-page";
 
 	return <html lang="en">
 		<head>
@@ -47,7 +51,8 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 		<body class={layout}>
 			<a href="#main">skip to content</a>
 
-			<SiteHeader shortName={shortName} tagline={safe(tagline)} />
+			<SiteHeader shortName={shortName} tagline={safe(tagline)}
+				tiny={tiny} relatedLinks=<RelatedLinks/>/>
 
 			<section class="main-wrapper">
 				<main id="main">
@@ -57,26 +62,11 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 				<SiteNavigation currentSlug={slug} />
 			</section>
 
-			<SiteFooter shortName={shortName}>
-				{/* eslint-disable indent */}
-				<ImageLink href="https://www.npmjs.com/package/faucet-pipeline"
-						src={"npm.svg"} alt="npm" />
-
-				<ImageLink href="https://github.com/faucet-pipeline"
-						src={"github.svg"} alt="GitHub" />
-
-				<ImageLink href="https://twitter.com/moonbeamlabs"
-						src={"twitter.svg"} alt="Twitter" />
-				{/* eslint-enable indent */}
-			</SiteFooter>
+			{tiny ? null : <SiteFooter shortName={shortName}>
+				<RelatedLinks/>
+			</SiteFooter>}
 		</body>
 	</html>;
-}
-
-function ImageLink({ href, src, alt }) {
-	return <a href={href}>
-		<img src={assetURI(src)} alt={alt} />
-	</a>;
 }
 
 function renderScripts(items) {
