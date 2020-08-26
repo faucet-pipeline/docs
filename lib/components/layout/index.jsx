@@ -32,8 +32,13 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<meta name="description" content={claim} />
+			<link rel="icon" type="image/svg+xml"
+				href={assetURI("favicon.svg")} sizes="any"/>
 
 			{renderStyleSheets(stylesheets)}
+
+			<script async defer data-domain="faucet-pipeline.org"
+				src="https://stats.innoq.com/js/index.js"/>
 		</head>
 
 		<body class={layout}>
