@@ -9,8 +9,6 @@ export default function Footer({ shortName }, ...links) {
 			<img src={logo} alt={shortName} class="logo" />
 		</a>
 
-		<nav>
-			{links}
-		</nav>
+		{links}
 	</footer>;
 }

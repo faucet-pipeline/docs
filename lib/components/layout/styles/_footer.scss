@@ -10,17 +10,4 @@
 	> a img {
 		width: 8rem;
 	}
-
-	nav {
-		display: flex;
-		align-items: center;
-
-		a {
-			display: block;
-
-			& + a {
-				margin-left: 1.5rem;
-			}
-		}
-	}
 }
