@@ -8,9 +8,7 @@ import { createElement, safe } from "complate-stream";
 let layouts = new Set(["front-page"]);
 
 let stylesheets = [
-	assetURI("bundle.css"),
-	assetURI("prism.css"),
-	"https://fonts.googleapis.com/css?family=Titillium+Web:400,700"
+	assetURI("bundle.css")
 ];
 let scripts = [
 	assetURI("prism.js"),
@@ -25,7 +23,7 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 		throw new Error(`invalid page layout: ${repr(layout)}`);
 	}
 
-	return <html>
+	return <html lang="en">
 		<head>
 			<meta charset="utf-8" />
 			<title>{docTitle}</title>
@@ -34,9 +32,14 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 			<meta name="description" content={claim} />
 			<link rel="icon" type="image/svg+xml"
 				href={assetURI("favicon.svg")} sizes="any"/>
+			<link rel="preload" href={assetURI("titillium-web-regular.woff2")}
+				as="font" type="font/woff2" crossorigin="anonymous"/>
+			<link rel="preload" href={assetURI("titillium-web-bold.woff2")}
+				as="font" type="font/woff2" crossorigin="anonymous"/>
 
 			{renderStyleSheets(stylesheets)}
 
+			{renderScripts(scripts)}
 			<script async defer data-domain="faucet-pipeline.org"
 				src="https://stats.innoq.com/js/index.js"/>
 		</head>
@@ -66,8 +69,6 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 						src={"twitter.svg"} alt="Twitter" />
 				{/* eslint-enable indent */}
 			</SiteFooter>
-
-			{renderScripts(scripts)}
 		</body>
 	</html>;
 }
@@ -80,7 +81,7 @@ function ImageLink({ href, src, alt }) {
 
 function renderScripts(items) {
 	return items.map(uri => {
-		return <script src={uri} />;
+		return <script src={uri} async />;
 	});
 }
 
