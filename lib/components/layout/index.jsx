@@ -38,6 +38,8 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 				href={assetURI("favicon.svg")} sizes="any"/>
 			<link rel="preload" href={assetURI("titillium-web-regular.woff2")}
 				as="font" type="font/woff2" crossorigin="anonymous"/>
+			<link rel="preload" href={assetURI("titillium-web-italic.woff2")}
+				as="font" type="font/woff2" crossorigin="anonymous"/>
 			<link rel="preload" href={assetURI("titillium-web-bold.woff2")}
 				as="font" type="font/woff2" crossorigin="anonymous"/>
 

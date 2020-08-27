@@ -1,38 +1,24 @@
 // page-specific styling
+main > pre.language-cli + ul {
+	padding: 0 var(--spacer-xs);
+	list-style: "✅ " inside;
+}
 
-.front-page {
-	$_aside-width: 11rem; // XXX: magic number
+@media screen and (min-width: 420px) {
+	.front-page {
+		main > pre.language-cli,
+		main > pre.language-cli + ul {
+			float: right;
+			width: 11rem; // XXX: magic number
+			margin-left: var(--spacer-xs);
+		}
 
-	main > pre.language-cli,
-	main > pre.language-cli + ul {
-		float: right;
-		width: $_aside-width;
-		margin-left: $spacer-default;
-	}
-	main > pre.language-cli {
-		// shrinkwrap, using margin to retain total width for consistency
-		$_cli-width: 9rem; // XXX: magic number
-		width: $_cli-width;
-		margin-right: $_aside-width - $_cli-width;
-	}
+		main > pre.language-cli {
+			padding: var(--spacer-xs);
+		}
 
-	main > pre.language-cli {
-		padding: $spacer-default;
-		border-radius: $base-corner-radius;
-	}
-
-	main > pre.language-cli + ul {
-		clear: right;
-		margin-top: 0;
-		padding: 0 $spacer-default;
-		line-height: $base-line-height;
-		list-style-type: none;
-
-		li:before {
-			content: "✅ ";
-			// manually adjust positioning -- XXX: should not be necessary!?
-			position: relative;
-			top: 1px;
+		main > pre.language-cli + ul {
+			clear: right;
 		}
 	}
 }

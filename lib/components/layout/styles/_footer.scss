@@ -1,13 +1,8 @@
+/* TODO: same code as tiny-site-header */
 .site-footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	max-height: 5rem;
-	margin-top: 2rem;
-	padding: 1rem 1.5rem;
-	background-color: $faucet-blue;
-
-	> a img {
-		width: 8rem;
-	}
+	padding: var(--spacer-m) var(--spacer-xl);
+	background-color: var(--main-color);
 }

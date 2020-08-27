@@ -1,10 +1,6 @@
-@import "normalize.css/normalize";
+@use "normalize.css/normalize";
+@use "./settings";
+@use "./base";
 
-@import "./settings/colors";
-@import "./settings/breakpoints";
-@import "./settings/base";
-
-@import "./base";
-
-@import "../components/layout/layout";
-@import "../components/code/code";
+@use "../components/layout/layout";
+@use "../components/code/code";

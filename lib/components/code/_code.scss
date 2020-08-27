@@ -28,8 +28,8 @@ pre[class*="language-"],
 /* Code blocks */
 // removed border & box-shadow
 pre[class*="language-"] {
-	border-radius: .5em;
-	margin: $base-block-margin; // adjusted for consistency
+	border-radius: var(--base-border-radius); // adjusted for consistency
+	margin: var(--base-block-margin); // adjusted for consistency
 	overflow: auto;
 	padding: 1em;
 }
