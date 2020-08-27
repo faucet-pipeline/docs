@@ -2,30 +2,33 @@
 	ul {
 		margin: 0;
 		padding: 0;
-		line-height: $base-line-height;
+		line-height: var(--base-line-height);
 		list-style: none;
 	}
 
 	li {
-		color: $light-gray;
-		padding: 0 $spacer-default;
+		color: var(--text-color-brighter);
+		padding: 0 var(--spacer-m);
 	}
 
 	a {
-		color: $dark-gray;
+		display: block;
+		padding: var(--spacer-xxs) var(--spacer-xs);
+		color: var(--text-color-bright);
 		text-decoration: none;
 
 		&:hover {
-			color: $body-color;
+			color: var(--text-color);
 		}
 	}
 
 	li.selected {
-		background: $transparent-highlight;
-		border-radius: 2px;
+		background: var(--highlight-background);
+		border-radius: var(--base-border-radius);
 
-		a, a:hover {
-			color: $black;
+		a,
+		a:hover {
+			color: var(--text-color);
 		}
 	}
 }

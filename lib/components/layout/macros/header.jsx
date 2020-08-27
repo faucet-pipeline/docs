@@ -6,7 +6,7 @@ function TinyHeader({ shortName, relatedLinks }) {
 
 	return <header class="tiny-site-header">
 		<a href="/">
-			<img src={logo} alt={shortName} class="logo" />
+			<img src={logo} alt={shortName} class="logo" width="144" height="35"/>
 		</a>
 
 		{relatedLinks}
@@ -18,10 +18,11 @@ function BigHeader({ shortName, tagline }) {
 	let altLogo = assetURI("faucet-logotype.gif");
 
 	return <header class="site-header">
-		<p class="tagline">{tagline}</p>
+		<strong class="tagline">{tagline}</strong>
 
 		<div class="logo">
-			<img src={logo} alt={shortName} data-src={altLogo} />
+			<img src={logo} alt={shortName} data-src={altLogo}
+				class="logo" width="722" height="433" />
 		</div>
 	</header>;
 }

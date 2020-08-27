@@ -1,84 +1,28 @@
 .site-header {
 	display: flex;
-	padding: 0 0 0 1rem;
-	background-image: linear-gradient(to right bottom, $faucet-blue 50%, $white 50%);
+	padding: 1rem var(--spacer-m) 0;
+	background-image: linear-gradient(to right bottom,
+		var(--main-color) 50%,
+		var(--background-color) 50%);
 
 	.tagline {
 		flex-basis: 50%;
-		margin: 0;
-		padding-top: 1rem;
-		line-height: inherit;
-		font-weight: 700;
-		color: $white;
+		line-height: var(--tight-line-height);
+		font-size: var(--tagline-font-size);
+		color: var(--background-color);
 	}
 
 	.logo {
 		flex-basis: 70%;
-		align-self: flex-start;
-
-		img {
-			max-width: 100%;
-		}
 	}
 }
 
-@media screen and (min-width: $breakpoint-xs-sm) {
-	.site-header .tagline {
-		font-size: 1.25rem;
-	}
-}
-
-@media screen and (min-width: $breakpoint-sm) {
-	.site-header {
-		padding: 1rem 2rem 0;
-
-		.tagline {
-			padding: 1rem 0;
-			font-size: 1.5rem;
-		}
-	}
-}
-
-@media screen and (min-width: $breakpoint-md) {
-	.site-header .tagline {
-		font-size: 2rem;
-	}
-}
-
-@media screen and (min-width: $breakpoint-md-lg) {
-	.site-header .tagline {
-		font-size: 3rem;
-	}
-}
-
-@media screen and (min-width: $breakpoint-lg) {
-	.site-header .tagline {
-		font-size: 3.5rem;
-		padding: 2rem 1rem;
-	}
-}
-
-@media screen and (min-width: $breakpoint-lg-xl) {
-	.site-header {
-		padding: 2rem 3rem 0;
-
-		.tagline {
-			padding: 2rem 0;
-			font-size: 4rem;
-		}
-	}
-}
-
+/* TODO: same code as site-footer */
 .tiny-site-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	max-height: 5rem;
-	margin-bottom: 2rem;
-	padding: 0.5rem 1.5rem;
-	background-color: $faucet-blue;
-
-	> a img {
-		width: 8rem;
-	}
+	padding: var(--spacer-m) var(--spacer-xl);
+	background-color: var(--main-color);
+	margin-bottom: var(--spacer-xl);
 }

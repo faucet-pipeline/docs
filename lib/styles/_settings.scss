@@ -1,0 +1,58 @@
+$black: #1f1f1f;
+$dark-gray: #444;
+$light-gray: #666;
+$white: #FFF;
+$blue: #37375F;
+$red: #B7455F;
+
+:root {
+	--base-font-size: 100%; // ~16px
+	--base-line-height: 1.75;
+	--tight-line-height: 1.2;
+
+	--spacer-xxs: 0.25rem;
+	--spacer-xs: 0.5rem;
+	--spacer-s: 0.75rem;
+	--spacer-m: 1rem;
+	--spacer-l: 1.25rem;
+	--spacer-xl: 1.5rem;
+
+	--base-border-radius: 5px;
+
+	--base-block-margin: 0 0 var(--spacer-xs);
+	--base-heading-margin: 0 0 var(--spacer-xxs);
+
+	--main-color: #{$blue};
+	--link-color: #{$red};
+	--link-color-hover: #{$blue};
+	--text-color: #{$black};
+	--text-color-bright: #{$dark-gray};
+	--text-color-brighter: #{$light-gray};
+	--background-color: #{$white};
+	--highlight-background: #{$red}CC;
+	--highlight-border: 4px solid #{$blue}CC;
+
+	--site-nav-order: 1;
+	--main-base-width: 320px; // TODO: Figure out a good value here
+	--tagline-font-size: 1rem;
+	--wrapper-max-width: 100%;
+	--wrapper-margin: var(--spacer-xs);
+
+	@media screen and (min-width: 64em) {
+		--base-font-size: 112.5%; // ~18px (from a default of 16px)
+	}
+
+	@media screen and (min-width: 760px) {
+		--tagline-font-size: 2rem;
+		--site-nav-order: -1;
+	}
+
+	@media screen and (min-width: 820px) {
+		--wrapper-max-width: 90%;
+		--wrapper-margin: auto;
+	}
+
+	@media screen and (min-width: 900px) {
+		--tagline-font-size: 3rem;
+	}
+}
