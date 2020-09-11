@@ -1,16 +1,5 @@
 layout: front-page  
 
-```cli
-$ faucet --watch
-```
-
-* [CSS, Sass etc.](css.html)
-* [JavaScript (ES6)](js.html)
-* [JSX, TypeScript etc.](js.html)
-* [image optimization](images.html)
-* [fingerprinting](fingerprintng.html)
-* [framework integration](frameworks.html)
-
 **faucet-pipeline** takes care of **[pre-processing&nbsp;CSS](css.html)**,
 **[compiling&nbsp;modern&nbsp;JavaScript](js.html)** and framework-independent
 **[fingerprinting](manifest.html)** to take advantage of HTTP caching. It lets you
@@ -91,6 +80,12 @@ $ npx faucet
 for commands in `node_modules/.bin` -- you might also define
 [npm scripts](https://docs.npmjs.com/misc/scripts) to use `npm start`, for
 example.)
+
+We can also run it in watch mode:
+
+```shell
+$ npx faucet --watch
+```
 
 That's it! We can now execute that bundle, either in a browser or via Node:
 
