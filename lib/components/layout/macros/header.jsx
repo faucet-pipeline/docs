@@ -14,15 +14,16 @@ function TinyHeader({ shortName, relatedLinks }) {
 }
 
 function BigHeader({ shortName, tagline }) {
-	let logo = assetURI("faucet-logotype.png");
-	let altLogo = assetURI("faucet-logotype.gif");
+	let staticLogo = assetURI("logo.png");
+	let animatedLogo = assetURI("logo.webm");
 
 	return <header class="site-header">
 		<strong class="tagline">{tagline}</strong>
 
 		<div class="logo">
-			<img src={logo} alt={shortName} data-src={altLogo}
-				class="logo" width="722" height="433" />
+			<video width="512" height="512" loop poster={staticLogo}>
+				<source src={animatedLogo} type="video/webm"/>
+			</video>
 		</div>
 	</header>;
 }
