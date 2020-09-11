@@ -23,7 +23,7 @@
 	}
 
 	li.selected {
-		background: var(--highlight-background);
+		border: 1px solid var(--highlight-background);
 		border-radius: var(--base-border-radius);
 
 		a,
