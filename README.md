@@ -1,15 +1,9 @@
-# faucet-pipeline
+Getting Started
+---------------
 
-This is the documentation for the faucet-pipeline project. You can find the
-current version at:
-[http://www.faucet-pipeline.org](http://www.faucet-pipeline.org)
-
-## Contributing to the Documentation
-
-* Run `bundle`
-* Run ` bundle exec jekyll serve`
-* Go to [http://0.0.0.0:4000](http://0.0.0.0:4000)
-
-## License
-
-faucet-pipeline is licensed under Apache 2.0 License.
+* ensure [Node](http://nodejs.org) is installed
+* `npm install` downloads dependencies
+* `npm run compile` generates the site at `dist/site`
+* `npm start` automatically recompiles while monitoring code changes - the site
+  is available at http://localhost:8000/index.html
+* `npm test` checks code for stylistic consistency
