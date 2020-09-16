@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@openfonts/titillium-web_latin": "^1.44.1",
-		"commonmark": "^0.29.1",
+		"commonmark": "^0.29.2",
 		"complate-ssg": "^0.19.4",
 		"donny": "^0.2.0",
 		"eslint-config-fnd-jsx": "^1.8.0",
