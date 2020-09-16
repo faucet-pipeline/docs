@@ -2,5 +2,10 @@
 @use "./settings";
 @use "./base";
 
-@use "../components/layout/layout";
-@use "../components/code/code";
+@use "../components/bar";
+@use "../components/code";
+@use "../components/iconlist";
+@use "../components/layout";
+@use "../components/navigation";
+@use "../components/skip";
+@use "../components/teaser";

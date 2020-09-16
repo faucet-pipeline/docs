@@ -1,6 +1,6 @@
 import { createElement } from "complate-stream";
 
-export default function SiteNavigation({ currentSlug }) {
+export function Navigation({ currentSlug }) {
 	let Link = ({ slug }, ...children) => {
 		let uri = `${slug}.html`;
 		let selected = slug === currentSlug;
@@ -37,7 +37,7 @@ export default function SiteNavigation({ currentSlug }) {
 }
 
 function Nav(_, ...links) {
-	return <nav class="site-nav">
+	return <nav class="navigation">
 		<ul>
 			{links}
 		</ul>

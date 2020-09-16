@@ -1,12 +1,11 @@
-import SiteHeader from "./macros/header";
-import SiteNavigation from "./macros/nav";
-import SiteFooter from "./macros/footer";
-import RelatedLinks from "./macros/related";
-import { shortName, tagline } from "../../../content/defaults";
+import { Teaser } from "../teaser";
+import { Navigation } from "../navigation";
+import { Bar } from "../bar";
+import { SkipLink } from "../skip";
 import { assetURI, repr } from "../../../views/util";
-import { createElement, safe } from "complate-stream";
+import { createElement } from "complate-stream";
 
-let layouts = new Set(["front-page"]);
+let layouts = new Set(["baroque", "tiny"]);
 
 let stylesheets = [
 	assetURI("bundle.css")
@@ -20,12 +19,12 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 	if(!docTitle) {
 		throw new Error("missing document title");
 	}
-	if(layout && !layouts.has(layout)) {
+	if(!layout) {
+		layout = "tiny";
+	}
+	if(!layouts.has(layout)) {
 		throw new Error(`invalid page layout: ${repr(layout)}`);
 	}
-
-	// front page is baroque, other pages are tiny
-	let tiny = layout !== "front-page";
 
 	return <html lang="en">
 		<head>
@@ -50,23 +49,20 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 				src="https://stats.innoq.com/js/index.js"/>
 		</head>
 
-		<body class={layout}>
-			<a href="#main">skip to content</a>
+		<body>
+			<SkipLink href="#main"/>
 
-			<SiteHeader shortName={shortName} tagline={safe(tagline)}
-				tiny={tiny} relatedLinks=<RelatedLinks/>/>
+			{ layout === "tiny" ? <Bar TagName="header"/> : <Teaser/> }
 
-			<section class="main-wrapper">
+			<section class="layout">
 				<main id="main">
 					{children}
 				</main>
 
-				<SiteNavigation currentSlug={slug} />
+				<Navigation currentSlug={slug} />
 			</section>
 
-			{tiny ? null : <SiteFooter shortName={shortName}>
-				<RelatedLinks/>
-			</SiteFooter>}
+			{ layout === "baroque" ? <Bar TagName="footer"/> : null }
 		</body>
 	</html>;
 }
