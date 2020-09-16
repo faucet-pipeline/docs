@@ -13,25 +13,28 @@ export function Navigation({ currentSlug }) {
 			<Link slug="philosophy">Motivation & Philosophy</Link>
 			<Link slug="cli">Command-Line Interface</Link>
 			<Link slug="manifest">Fingerprinting & Manifest</Link>
-			<Link slug="browsers">Browserslist</Link>
+			<Link slug="watching">File Watching</Link>
+			<Link slug="faq">Frequently Asked Questions</Link>
 		</NavGroup>
 
 		<NavGroup label="Asset Types">
 			<Link slug="sass">CSS / Sass</Link>
-			<Link slug="js">JavaScript</Link>
+			<Link slug="js">JavaScript / TypeScript</Link>
+			<Link slug="images">Images</Link>
 			<Link slug="static">Static Files</Link>
 		</NavGroup>
 
 		<NavGroup label="Framework Integration">
 			<Link slug="rails">Ruby on Rails</Link>
-			<Link slug="spring">Spring Framework</Link>
+			<Link slug="spring-boot">Spring Boot</Link>
 		</NavGroup>
 
 		<NavGroup label="Community">
-			<Link slug="faq">Frequently Asked Questions</Link>
 			<Link slug="contributing">Contributing</Link>
-			<Link slug="alternatives">Alternatives</Link>
+			<Link slug="build-pipeline">Build a Pipeline</Link>
+			<Link slug="build-integration">Build an Integration</Link>
 			<Link slug="background">Background & Sponsors</Link>
+			<NavLink href="https://www.innoq.com/en/datenschutz">Privacy</NavLink>
 		</NavGroup>
 	</Nav>;
 }
