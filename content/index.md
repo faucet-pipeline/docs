@@ -1,4 +1,4 @@
-layout: front-page  
+layout: baroque
 
 **faucet-pipeline** takes care of **[pre-processing&nbsp;CSS](css.html)**,
 **[compiling&nbsp;modern&nbsp;JavaScript](js.html)** and framework-independent

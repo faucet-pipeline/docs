@@ -1,4 +1,4 @@
-.site-header {
+.teaser {
 	display: flex;
 	padding: 1rem var(--spacer-m) 0;
 	background-image: linear-gradient(to right bottom,
@@ -19,14 +19,4 @@
 			cursor: pointer;
 		}
 	}
-}
-
-/* TODO: same code as site-footer */
-.tiny-site-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: var(--spacer-m) var(--spacer-xl);
-	background-color: var(--main-color);
-	margin-bottom: var(--spacer-xl);
 }

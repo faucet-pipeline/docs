@@ -1,0 +1,25 @@
+header {
+	margin-bottom: var(--spacer-xl);
+}
+
+.layout {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: var(--wrapper-max-width);
+	margin: 0 var(--wrapper-margin) var(--spacer-xl);
+
+	& > * {
+		max-width: var(--wrapper-max-width);
+	}
+
+	& > nav {
+		flex: 0 1 content;
+		order: var(--site-nav-order);
+		padding-right: var(--spacer-m);
+	}
+
+	& > main {
+		flex: 1 1 var(--main-base-width);
+	}
+}

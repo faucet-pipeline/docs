@@ -1,14 +1,17 @@
-.site-nav {
+.navigation {
 	ul {
-		margin: 0;
 		padding: 0;
-		line-height: var(--base-line-height);
 		list-style: none;
 	}
 
 	li {
 		color: var(--text-color-brighter);
 		padding: 0 var(--spacer-m);
+
+		&.selected {
+			border: 1px solid var(--highlight-background);
+			border-radius: var(--base-border-radius);
+		}
 	}
 
 	a {
@@ -18,16 +21,6 @@
 		text-decoration: none;
 
 		&:hover {
-			color: var(--text-color);
-		}
-	}
-
-	li.selected {
-		border: 1px solid var(--highlight-background);
-		border-radius: var(--base-border-radius);
-
-		a,
-		a:hover {
 			color: var(--text-color);
 		}
 	}
