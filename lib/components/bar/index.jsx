@@ -12,7 +12,7 @@ export function Bar({ TagName }) {
 		</a>
 
 		<Iconlist>
-			<Iconlink href="https://www.npmjs.com/package/faucet-pipeline"
+			<Iconlink href="https://www.npmjs.com/package/faucet-pipeline-core"
 				src={"npm.svg"} alt="npm" />
 
 			<Iconlink href="https://github.com/faucet-pipeline"
