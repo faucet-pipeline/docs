@@ -4,7 +4,7 @@ layout: baroque
 **[compiling&nbsp;modern&nbsp;JavaScript](js.html)** and framework-independent
 **[fingerprinting](manifest.html)** to take advantage of HTTP caching. It lets you
 **[focus on source code](philosophy.html)** instead of complex, highly customized
-build tools: With **minimal configuration** you can take advantage of the
+build tools: With **minimal configuration**, you can take advantage of the
 front-end community's **established tooling**, without worrying about low-level
 details.
 

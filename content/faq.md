@@ -27,5 +27,5 @@ default)
 
 You probably reached the maximum value for watched files in inotify. This is
 probably due to your `node_modules` folder. You should restrict your watcher to
-only the folders that contain your SCSS/JS source files. [See File Watching for
+only the folders that contain your source files. [See File Watching for
 details](/watching).

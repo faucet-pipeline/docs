@@ -17,6 +17,8 @@ building your project according to the configuration in the file
   mangling etc.) due to our `view-source:` conviction.
 * `--sourcemaps`: Add inline sourcemaps to all generated files by pipelines that
     support it (currently `faucet-pipeline-sass` and `faucet-pipeline-js`).
+* `--serve [HOST:]PORT`: serve generated files via HTTP
+* `--liveserve [HOST:]PORT`: Like serve, but with live reloading
 
 We recommend that you do not use `--fingerprint` with `--watch` (fingerprinting
 is not very useful in development and it also reduces clutter on your disk).

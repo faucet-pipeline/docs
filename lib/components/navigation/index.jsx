@@ -22,18 +22,17 @@ export function Navigation({ currentSlug }) {
 			<Link slug="js">JavaScript / TypeScript</Link>
 			<Link slug="images">Images</Link>
 			<Link slug="static">Static Files</Link>
+			<Link slug="build-pipeline">Build a Pipeline</Link>
 		</NavGroup>
 
 		<NavGroup label="Framework Integration">
 			<Link slug="rails">Ruby on Rails</Link>
 			<Link slug="spring-boot">Spring Boot</Link>
+			<Link slug="build-integration">Build an Integration</Link>
 		</NavGroup>
 
 		<NavGroup label="Community">
 			<Link slug="contributing">Contributing</Link>
-			<Link slug="build-pipeline">Build a Pipeline</Link>
-			<Link slug="build-integration">Build an Integration</Link>
-			<Link slug="background">Background & Sponsors</Link>
 			<NavLink href="https://www.innoq.com/en/datenschutz">Privacy</NavLink>
 		</NavGroup>
 	</Nav>;
