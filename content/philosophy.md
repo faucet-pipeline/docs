@@ -6,31 +6,31 @@ title: Motivation & Philosophy
 > --- [Jeremy Keith](https://adactio.com/journal/7706)
 
 faucet has two primary goals: reducing accidental complexity and promoting
-sustainable source code. As such, it is designed around intentional constraints
+sustainable source code. As such, we designed it around intentional constraints
 and a set of core beliefs.
 
 The idea grew out of two conflicting insights: Modern front-end development
 provides immense potential to reduce cognitive load for developers, thus making
-code both more enjoyable and maintainable -- thanks to CSS pre-processors as
-well as newly standardized JavaScript modules and syntax. Yet at the same time,
-these very advances significantly increase complexity, frequently resulting in
-fatigue and wariness:
+code both more enjoyable and maintainable -- thanks to CSS pre-processors and
+newly standardized JavaScript modules and syntax. Yet at the same time, these
+very advances significantly increase complexity, frequently resulting in fatigue
+and wariness:
 
 > I'd like to use ES6, but haven't set up a transpiler yet
 
 This sentiment was common among friends and colleagues. While some of that
-complexity is inherent -- compiling inevitably introduces a layer of indirection
--- the primary hurdle turned out to the complexity of _tooling_. faucet tries to
-shield users from tooling-specific low-level details for both configuration and
+complexity is inherent – compiling  introduces a layer of indirection – the
+primary hurdle turned out to be tooling complexity. faucet tries to shield
+users from tooling-specific low-level details for both configuration and
 dependency management.
 
 faucet tries hard to be
 [replaceable](https://martinfowler.com/bliki/SacrificialArchitecture.html) and
-to stay out of your way: We believe that source code should not rely on any
-particular build tool, but rather be standards-compliant and thus portable
-across build systems. Naturally this means that project-specific customization
-is limited, which we consider a useful constraint -- though it means that
-[faucet might not be for everyone](alternatives.html).
+stay out of your way: We believe that source code should not rely on any
+particular build tool, but rather be standards-compliant and portable across
+build systems. Naturally, this means that project-specific customization is
+limited, which we consider a useful constraint – though it means that faucet
+might not be for everyone.
 
 In practice, this means we've preselected established tools and libraries and
 wrap them in a shell that's easy to understand and operate -- without
@@ -39,16 +39,14 @@ transpiling. We don't expect to change the underlying tooling frequently, but
 we'll be able to if something better comes along -- without burdening users with
 the details.
 
-The original impetus was to get more people to take adavantage of
-[Rollup](https://rollupjs.org), prompted by Nolan Lawson's
-[The cost of small modules](https://nolanlawson.com/2016/08/15/the-cost-of-small-modules/):
-We're convinced that even when compiling source modules into a bundle, the
-resulting bundle's internals still matter.
+To simplify the process of preparing assets for delivery, faucet takes care of
+all the minutiae, providing the underlying infrastructure and reducing
+configuration to the bare minimum required. With all that out of the way, we can
+focus on actually writing the code. Thus we can easily recommend it to friends
+and colleagues and get them started in less than a minute.
 
-This evolved into a suite of additional abstractions for similar tasks: CSS
-pre-processing (using [Sass](http://sass-lang.com) by default, if only because
-it happens to be our curent preference), optimizing images and handling static
-assets -- including fingerprinting for HTTP cache optimization.
-
-Of course faucet wouldn't be possible without relying on amazing work by a huge
-number of people; we're merely provides a bit of glue code on top.
+Of course, faucet wouldn’t be possible without relying on fantastic work by many
+people; we merely provide a bit of glue code on top. The work on this project is
+sponsored by [INNOQ](https://www.innoq.com) & [fejo.dk](https://www.fejo.dk). It
+is used both in production as well as for internal applications by both
+companies.

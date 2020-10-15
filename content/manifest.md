@@ -1,15 +1,16 @@
 title: Fingerprinting & Manifest
 
-`faucet-pipeline` can fingerprint the generated files for you. That means that
-it adds a hash of the file content to the file name. This allows you to cache
-your files indefinitely to reduce the number of requests your clients need to
-make. To enable that, pass the `--fingerprint` option to the CLI.
+
+`faucet-pipeline` can fingerprint the generated files for you: It adds a hash of
+the file content to the file name. You can cache files with a fingerprint
+indefinitely, which reduces the number of requests your clients need to make. To
+enable that, pass the `--fingerprint` option to the CLI.
 
 When you fingerprint your files, you can no longer hard code the URIs in your
-HTML as well as CSS. You need to have a way to look up the resulting URIs.
-`faucet-pipeline` can generate a so called manifest file for that purpose (see
-configuration below for how to enable it): The key is is an identifier for you
-to find the file. The value is the URL where the files will be available.
+HTML and CSS. You need to have a way to look up the resulting URIs.
+`faucet-pipeline` can generate a so-called manifest file for that purpose (see
+configuration below for how to enable it): The key is an identifier for you to
+find the file. The value is the URL where the files will be available.
 
 The manifest could look like this:
 

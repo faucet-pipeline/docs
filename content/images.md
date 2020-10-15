@@ -1,6 +1,7 @@
 title: faucet-pipeline-images
 
-**This is currently in beta**
+**A new, more powerful image pipeline is in beta. This describes the current
+version.**
 
 The configuration is an array of folders or single files you want to copy. Each
 entry of the array is an object with two keys: `source` is the source folder,

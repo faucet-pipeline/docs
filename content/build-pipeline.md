@@ -16,17 +16,17 @@ faucet.config.js you put:
 
 ```javascript
 module.exports = {
-    name: [{
-        a: 1,
-        b: 2
-    }]
+  name: [{
+    a: 1,
+    b: 2
+  }]
 
-	plugins: {
-        name: {
-            plugin: path.resolve("./path/to/your/plugin"),
-            bucket: "chosen-bucket"
-        }
-	}
+  plugins: {
+    name: {
+      plugin: path.resolve("./path/to/your/plugin"),
+      bucket: "chosen-bucket"
+    }
+  }
 }
 ```
 
