@@ -76,7 +76,7 @@ be compiled, and `target` is the file that should be created (the path is, of
 course, modified a little when you use fingerprinting). You also need to set
 `typescript` to true for the bundles that should be compiled with TypeScript:
 
-```
+```js
 module.exports = {
     js: [{
         source: "./src/index.ts",
