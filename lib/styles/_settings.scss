@@ -20,7 +20,7 @@ $red: #B7455F;
 	--base-border-radius: 5px;
 
 	--base-block-margin: 0 0 var(--spacer-xs);
-	--base-heading-margin: 0 0 var(--spacer-xxs);
+	--base-heading-margin: var(--spacer-xl) 0 var(--spacer-xxs);
 
 	--main-color: #{$blue};
 	--link-color: #{$red};
