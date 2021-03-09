@@ -1,9 +1,9 @@
 layout: baroque
 
-**faucet-pipeline** takes care of **[pre-processing&nbsp;CSS](css.html)**,
-**[compiling&nbsp;modern&nbsp;JavaScript](js.html)** and framework-independent
-**[fingerprinting](manifest.html)** to take advantage of HTTP caching. It lets you
-**[focus on source code](philosophy.html)** instead of complex, highly customized
+**faucet-pipeline** takes care of **[pre-processing&nbsp;CSS](css)**,
+**[compiling&nbsp;modern&nbsp;JavaScript](js)** and framework-independent
+**[fingerprinting](manifest)** to take advantage of HTTP caching. It lets you
+**[focus on source code](philosophy)** instead of complex, highly customized
 build tools: With **minimal configuration**, you can take advantage of the
 front-end community's **established tooling**, without worrying about low-level
 details.
@@ -35,7 +35,7 @@ Getting Started
 ---------------
 
 In order to avoid unnecessary bloat, you're only required to install the
-functionality you actually need. Let's start with some [JavaScript](js.html):
+functionality you actually need. Let's start with some [JavaScript](js):
 
 ```shell
 $ npm install faucet-pipeline-esnext

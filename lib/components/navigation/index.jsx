@@ -2,9 +2,8 @@ import { createElement } from "complate-stream";
 
 export function Navigation({ currentSlug }) {
 	let Link = ({ slug }, ...children) => {
-		let uri = `${slug}.html`;
 		let selected = slug === currentSlug;
-		return <NavLink href={uri} selected={selected}>{children}</NavLink>;
+		return <NavLink href={slug} selected={selected}>{children}</NavLink>;
 	};
 
 	return <Nav>
