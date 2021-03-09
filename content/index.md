@@ -94,7 +94,7 @@ $ node dist/bundle.js
 [info] hello world
 ```
 
-The [JavaScript docs](js.html) provide a more detailed explanation, including
-configuration options. You might also be interested in [CSS](css.html),
-[images](images.html), [static files](static.html) or
-[fingerprinting](fingerprinting.html).
+The [JavaScript docs](/js) provide a more detailed explanation, including
+configuration options. You might also be interested in [SCSS](/sass),
+[images](/images), [static files](/static) or
+[fingerprinting](/manifest).
