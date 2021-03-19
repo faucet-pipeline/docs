@@ -42,6 +42,8 @@ module.exports = {
 
 ## Compact
 
+**Note that for compressing images, [we have an image plugin now](/images).**
+
 By default, faucet-pipeline-static only copies files, even if the `--compact`
 flag is provided. If you want to compact files, provide the `compact` option in
 your configuration. It is an object that maps file extensions to functions. The
