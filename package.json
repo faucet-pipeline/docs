@@ -10,7 +10,7 @@
 		"compile:prod": "faucet --compact --fingerprint"
 	},
 	"dependencies": {
-		"prismjs": "^1.23.0"
+		"prismjs": "^1.26.0"
 	},
 	"devDependencies": {
 		"@openfonts/titillium-web_latin": "^1.44.2",
