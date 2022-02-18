@@ -10,18 +10,18 @@
 		"compile:prod": "faucet --compact --fingerprint"
 	},
 	"dependencies": {
-		"prismjs": "^1.23.0"
+		"prismjs": "^1.27.0"
 	},
 	"devDependencies": {
 		"@openfonts/titillium-web_latin": "^1.44.2",
-		"commonmark": "^0.29.3",
+		"commonmark": "^0.30.0",
 		"complate-ssg": "^0.19.4",
-		"donny": "^0.2.0",
+		"donny": "^0.3.0",
 		"eslint-config-fnd-jsx": "^1.8.0",
-		"faucet-pipeline-sass": "^1.7.0",
-		"faucet-pipeline-static": "^1.2.0",
-		"metacolon": "^1.1.0",
-		"nodemon": "^2.0.12",
+		"faucet-pipeline-sass": "^1.7.1",
+		"faucet-pipeline-static": "^2.0.0",
+		"metacolon": "^1.1.1",
+		"nodemon": "^2.0.15",
 		"normalize.css": "^8.0.1",
 		"npm-run-all": "^4.1.5"
 	}
