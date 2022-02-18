@@ -5,7 +5,7 @@ layout: baroque
 **[fingerprinting](manifest)** to take advantage of HTTP caching. It lets you
 **[focus on source code](philosophy)** instead of complex, highly customized
 build tools: With **minimal configuration**, you can take advantage of the
-front-end community's **established tooling**, without worrying about low-level
+front-end community's **established tooling** without worrying about low-level
 details.
 
 Creating a CSS bundle from [Sass](http://sass-lang.com) modules:
@@ -34,22 +34,21 @@ Fingerprinting arbitrary files, like fonts and images:
 Getting Started
 ---------------
 
-In order to avoid unnecessary bloat, you're only required to install the
-functionality you actually need. Let's start with some [JavaScript](js):
+To avoid unnecessary bloat, you're only required to install the functionality
+you need. Let's start with some [JavaScript](js):
 
 ```shell
-$ npm install faucet-pipeline-esnext
+$ npm install faucet-pipeline-js
 ```
 
-Configuration resides in `faucet.config.js` – in this case, we want to transpile
-modern JavaScript (ES6) to backwards-compatible ES5:
+Configuration resides in `faucet.config.js` – in this case, we want to bundle
+our JavaScript::
 
 ```javascript
 module.exports = {
     js: [{
         source: "./src/index.js",
-        target: "./dist/bundle.js",
-        esnext: true
+        target: "./dist/bundle.js"
     }]
 };
 ```
@@ -96,5 +95,5 @@ $ node dist/bundle.js
 
 The [JavaScript docs](/js) provide a more detailed explanation, including
 configuration options. You might also be interested in [Sass](/sass),
-[images](/images), [static files](/static) or
+[images](/images), [static files](/static), or
 [fingerprinting](/manifest).
