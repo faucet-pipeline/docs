@@ -13,13 +13,13 @@ export function Bar({ TagName }) {
 
 		<Iconlist>
 			<Iconlink href="https://www.npmjs.com/package/faucet-pipeline-core"
-				src={"npm.svg"} alt="npm" />
+				src={"npm.svg"} alt="npm" width="24" height="10" />
 
 			<Iconlink href="https://github.com/faucet-pipeline"
-				src={"github.svg"} alt="GitHub" />
+				src={"github.svg"} alt="GitHub" width="24" height="33" />
 
 			<Iconlink href="https://twitter.com/faucet_pipeline"
-				src={"twitter.svg"} alt="Twitter" />
+				src={"twitter.svg"} alt="Twitter" width="24" height="33" />
 		</Iconlist>
 	</TagName>;
 }
