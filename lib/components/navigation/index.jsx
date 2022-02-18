@@ -17,7 +17,8 @@ export function Navigation({ currentSlug }) {
 		</NavGroup>
 
 		<NavGroup label="Asset Types">
-			<Link slug="sass">CSS / Sass</Link>
+			<Link slug="sass">Sass</Link>
+			<Link slug="css">CSS (Beta)</Link>
 			<Link slug="js">JavaScript / TypeScript</Link>
 			<Link slug="images">Images</Link>
 			<Link slug="static">Static Files</Link>

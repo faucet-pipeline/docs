@@ -4,8 +4,8 @@ Here we want to address some common questions.
 
 ## I get an error when importing a third-party library. What can I do?
 
-This typically happens when importing a module which has already been bundled or
-otherwise provides a distribution – the solution is to skip transpilation there:
+This typically happens when importing a module that has already been bundled or
+otherwise provides a distribution. The solution is to skip transpilation there:
 
 ```javascript
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
 }
 ```
 
-(This is necessary, because faucet assumes we're consuming ES6 modules by
+(This is necessary because faucet assumes we're consuming ES6 modules by
 default)
 
 ## I get an error (ENOSPC) when watching files on Linux. What can I do?

@@ -1,24 +1,18 @@
 title: faucet-pipeline-images
 
-**This pipeline is currently in beta**
+faucet-pipeline-images offers image optimization and transformation.
+It supports JPG, PNG, SVG, WebP and AVIF.
 
-Because this plugin is still in beta, you need to activate the plugin manually:
+Currently, you need to **activate the plugin manually**:
 
 ```js
 module.exports = {
-    // your regular configuration...
-
-    // manual plugins
+    // ...
     plugins: [
         require("faucet-pipeline-images")
     ]
 }
 ```
-
-Please note that you need to add this configuration to each example below while
-this plugin is in beta.
-
-**Supported image formats:** JPG, PNG, SVG, AVIF and WebP
 
 The configuration is an array of folders or single files you want to copy. Each
 entry of the array is an object with at least two keys: `source` is the source

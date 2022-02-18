@@ -42,7 +42,7 @@ module.exports = {
 
 ## Compact
 
-**Note that for compressing images, [we have an image plugin now](/images).**
+**Note that for compressing images, [we have an image plugin](/images).**
 
 By default, faucet-pipeline-static only copies files, even if the `--compact`
 flag is provided. If you want to compact files, provide the `compact` option in
@@ -53,6 +53,9 @@ the compacted version of the provided buffer.
 
 A common use case is compressing images. The following configuration is a good
 starting point:
+If you prefer to compact your images on your own, you could for example use
+[imagemin-mozjpeg](https://github.com/imagemin/imagemin-mozjpeg) to compress all
+JPGs:
 
 ```js
 module.exports = {
@@ -60,25 +63,8 @@ module.exports = {
 		source: "./src",
 		target: "./dist",
 		compact: {
-			jpg: require("imagemin-mozjpeg")({ quality: 80 }),
-			png: require("imagemin-pngquant")(),
-			svg: require("imagemin-svgo")()
+			jpg: require("imagemin-mozjpeg")({ quality: 80 })
 		}
     }]
 };
 ```
-
-(the equivalent `compact: "images"` shortcut is deprecated and will be removed
-in a future version)
-
-In order to make this work, you need to install these three npm packages:
-
-* `imagemin-mozjpeg`
-* `imagemin-pngquant`
-* `imagemin-svgo`
-
-In this example, all SVGs will be compressed with
-[svgo](https://github.com/svg/svgo), all PNGs with
-[pngquant](https://github.com/kornelski/pngquant) and all JPGs with
-[mozjpeg](https://github.com/mozilla/mozjpeg). All
-[imagemin](https://github.com/imagemin) plugins can be used in similar fashion.

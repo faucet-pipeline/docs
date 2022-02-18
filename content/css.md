@@ -1,6 +1,20 @@
-title: faucet-pipeline-sass
+title: faucet-pipeline-css
 
-faucet-pipeline-sass offers bundling for files written in SCSS.
+faucet-pipeline-css offers bundling for files written in CSS.
+
+**Note that this module is in beta**
+
+To enable this **beta module** you need to add the following lines to your
+faucet.config.js:
+
+```
+module.exports = {
+    // ...
+    plugins: [
+        require("faucet-pipeline-css")
+    ]
+}
+```
 
 The configuration is an array of bundles you want to create. Each entry of the
 array is an object with two keys: `source` is the file that should be
@@ -9,18 +23,18 @@ course, modified a little when you use fingerprinting):
 
 ```js
 module.exports = {
-    sass: [{
-        source: "./example.scss",
+    css: [{
+        source: "./example.css",
         target: "./output/example.css"
     }, {
-        source: "./example2.scss",
+        source: "./example2.css",
         target: "./output/subfolder/example2.css"
     }]
 };
 ```
 
 To support fingerprinting of images and fonts, use `faucet-pipeline-static` to
-fingerprint them. Then you can use the `asset-url` function in your Sass files
+fingerprint them. Then you can use the `asset-url` function in your CSS files
 to get the correct path. It expects a key from the manifest as its argument, and
 outputs an `url()` with the value from the manifest. For example:
 
@@ -34,7 +48,7 @@ outputs an `url()` with the value from the manifest. For example:
 ```
 
 If you want to add vendor prefixes to your resulting CSS automatically,
-`faucet-pipeline-sass` includes
+`faucet-pipeline-css` includes
 [`autoprefixer`](https://github.com/postcss/autoprefixer) to do that. It is only
 activated if it finds a [`browserslist`](https://github.com/ai/browserslist)
 configuration (for example `.browserslistrc`) in your project and prefix
@@ -45,7 +59,7 @@ configuration, you can deactivate it per bundle:
 
 ```js
 module.exports = {
-    sass: [{
+    css: [{
         source: "./example.scss",
         target: "./output/example.css",
         browserslist: false
@@ -59,7 +73,7 @@ by default. If you want to choose a different one, you can, for example, set it 
 
 ```js
 module.exports = {
-    sass: [{
+    css: [{
         source: "./example.scss",
         target: "./output/example.css",
         browserslist: "legacy"
@@ -71,4 +85,4 @@ module.exports = {
 
 The created CSS puts each selector and declaration on its own line by default.
 If you provide `--compact` to the CLI command, we will remove as many extra
-characters as possible and write the entire stylesheet on a single line.
+whitespace as possible and write the entire stylesheet on a single line.
