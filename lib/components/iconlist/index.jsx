@@ -7,8 +7,8 @@ export function Iconlist(props, ...icons) {
 	</nav>;
 }
 
-export function Iconlink({ href, src, alt }) {
+export function Iconlink({ href, src, alt, width, height }) {
 	return <a href={href}>
-		<img src={assetURI(src)} alt={alt} />
+		<img src={assetURI(src)} alt={alt} width={width} height={height} />
 	</a>;
 }
