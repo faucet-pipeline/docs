@@ -120,7 +120,7 @@ module.exports = {
 ```
 
 If your browserslist is configured for multiple
-environments](https://github.com/browserslist/browserslist#configuring-for-different-environments),
+[environments](https://github.com/browserslist/browserslist#configuring-for-different-environments),
 you can choose which one to use for each bundle:
 
 ```js
