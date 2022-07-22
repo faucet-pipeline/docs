@@ -45,8 +45,8 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 			{renderStyleSheets(stylesheets)}
 
 			{renderScripts(scripts)}
-			<script async defer data-domain="faucet-pipeline.org"
-				src="https://stats.innoq.com/js/index.js"/>
+			<script defer data-domain="faucet-pipeline.org" 
+                src="https://plausible.io/js/plausible.js" />
 		</head>
 
 		<body>
