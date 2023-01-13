@@ -19,7 +19,7 @@
 		"donny": "^0.3.0",
 		"eslint-config-fnd-jsx": "^1.8.0",
 		"faucet-pipeline-sass": "^1.7.1",
-		"faucet-pipeline-static": "^2.0.0",
+		"faucet-pipeline-static": "^2.1.0",
 		"metacolon": "^1.1.1",
 		"nodemon": "^2.0.20",
 		"normalize.css": "^8.0.1",
