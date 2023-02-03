@@ -1,5 +1,6 @@
 .iconlist {
 	display: flex;
+	justify-content: flex-end;
 
 	a {
 		margin-left: var(--spacer-xl);
