@@ -11,6 +11,7 @@ export function Bar({ TagName }) {
 			<img src={logo} alt={shortName} class="logo" width="144" height="35" />
 		</a>
 
+		<a href="https://innoq.com/en/datenschutz">privacy</a>
 		<a href="https://www.innoq.com/en/impressum/">imprint</a>
 
 		<Iconlist>
