@@ -11,6 +11,8 @@ export function Bar({ TagName }) {
 			<img src={logo} alt={shortName} class="logo" width="144" height="35" />
 		</a>
 
+		<a href="https://www.innoq.com/en/impressum/">imprint</a>
+
 		<Iconlist>
 			<Iconlink href="https://www.npmjs.com/package/faucet-pipeline-core"
 				src={"npm.svg"} alt="npm" width="24" height="10" />
