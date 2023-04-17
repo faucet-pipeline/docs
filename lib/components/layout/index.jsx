@@ -45,8 +45,6 @@ export default function DefaultLayout({ docTitle, claim, layout, slug }, ...chil
 			{renderStyleSheets(stylesheets)}
 
 			{renderScripts(scripts)}
-			<script defer data-domain="faucet-pipeline.org"
-				src="https://plausible.io/js/plausible.js" />
 		</head>
 
 		<body>
