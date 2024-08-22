@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="<%= site.locale %>">
+		<head>
+				<meta charset="utf-8" />
+				<% resource_title = strip_html(strip_newlines(data.title)) %>
+				<title>
+						<% if resource_title == "About" %>
+								<%= site.metadata.title %> – <%= site.metadata.tagline %>
+						<% else %>
+								<%= resource_title %> | <%= site.metadata.title %>
+						<% end %>
+				</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<meta name="description" content="<%= site.metadata.description %>" />
+				<link rel="icon" type="image/svg+xml" href="<%= relative_url '/images/favicon.svg' %>" sizes="any"/>
+				<link rel="stylesheet" href="<%= asset_path :css %>" />
+				<script src="<%= asset_path :js %>" type="module"></script>
+		</head>
+		<body>
+				<%= render Skip.new(href: "#main") %>
+				<% if resource_title == "About" %>
+						<%= render Teaser.new(tagline: site.metadata.tagline) %>
+				<% else %>
+						<%= render Bar.new() %>
+				<% end %>
+
+				<section class="layout">
+						<main id="main"><%= yield %></main>
+						<%= render Navigation.new(resource: resource) %>
+				</section>
+
+				<% if resource_title == "About" %>
+						<%= render Bar.new(tag: "footer") %>
+				<% end %>
+		</body>
+</html>

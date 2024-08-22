@@ -1,0 +1,22 @@
+.bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--spacer-m);
+		padding: var(--spacer-m) var(--spacer-xl);
+		background-color: var(--main-color);
+}
+
+.bar > :first-child,
+.bar > :last-child {
+		flex-grow: 1;
+}
+
+.iconlist {
+		display: flex;
+		justify-content: flex-end;
+}
+
+.iconlist a {
+		margin-left: var(--spacer-xl);
+}

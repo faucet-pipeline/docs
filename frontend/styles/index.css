@@ -1,0 +1,147 @@
+:root {
+		--base-font-size: 100%; /* ~16px */
+		--base-line-height: 1.75;
+		--tight-line-height: 1.2;
+
+		--spacer-xxs: 0.25rem;
+		--spacer-xs: 0.5rem;
+		--spacer-s: 0.75rem;
+		--spacer-m: 1rem;
+		--spacer-l: 1.25rem;
+		--spacer-xl: 1.5rem;
+
+		--base-border-radius: 5px;
+
+		--base-block-margin: 0 0 var(--spacer-xs);
+		--base-heading-margin: var(--spacer-xl) 0 var(--spacer-xxs);
+
+		--main-color: #37375F;
+		--link-color: #B7455F;
+		--link-color-hover: #37375F;
+		--text-color: #1f1f1f;
+		--text-color-bright: #444;
+		--text-color-brighter: #666;
+		--background-color: #FFF;
+		--highlight-background: #B7455FCC;
+		--highlight-border: 4px solid #37375FCC;
+
+		--site-nav-order: 1;
+		--main-base-width: 320px; /* TODO: Figure out a good value here */
+		--tagline-font-size: 1.2rem;
+		--wrapper-max-width: 100%;
+		--wrapper-margin: var(--spacer-xs);
+
+		@media screen and (min-width: 64em) {
+				--base-font-size: 112.5%; /* ~18px (from a default of 16px) */
+		}
+
+		@media screen and (min-width: 760px) {
+				--tagline-font-size: 2rem;
+				--site-nav-order: -1;
+		}
+
+		@media screen and (min-width: 820px) {
+				--wrapper-max-width: 90%;
+				--wrapper-margin: auto;
+		}
+
+		@media screen and (min-width: 900px) {
+				--tagline-font-size: 3rem;
+		}
+}
+
+@font-face {
+		font-family: "Titillium Web";
+		font-weight: 400;
+		src: url("../fonts/titillium-web-regular.woff2") format("woff2");
+		font-display: swap;
+}
+
+@font-face {
+		font-family: "Titillium Web";
+		font-weight: 400;
+		font-style: italic;
+		src: url("../fonts/titillium-web-italic.woff2") format("woff2");
+		font-display: swap;
+}
+
+@font-face {
+		font-family: "Titillium Web";
+		font-weight: 700;
+		src: url("../fonts/titillium-web-bold.woff2") format("woff2");
+		font-display: swap;
+}
+
+html {
+		font-size: var(--base-font-size);
+		line-height: var(--base-line-height);
+}
+
+body {
+		font-family: "Titillium Web", sans-serif;
+		color: var(--text-color);
+		margin: 0;
+}
+
+h1,
+h2 {
+		margin: var(--base-heading-margin);
+		line-height: var(--base-line-height);
+}
+
+p,
+blockquote,
+ul {
+		margin: var(--base-block-margin);
+}
+
+li {
+		margin-bottom: var(--spacer-xs);
+}
+
+blockquote {
+		border-left: var(--highlight-border);
+		padding-left: 1rem;
+}
+
+a {
+		color: var(--link-color);
+		transition: color ease-in-out 0.2s;
+}
+
+a:hover,
+a:focus {
+		color: var(--link-color-hover);
+}
+
+video,
+img {
+		max-width: 100%;
+		height: auto;
+}
+
+header {
+		margin-bottom: var(--spacer-xl);
+}
+
+.layout {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		max-width: var(--wrapper-max-width);
+		margin: 0 var(--wrapper-margin) var(--spacer-xl);
+}
+
+.layout > * {
+		max-width: var(--wrapper-max-width);
+}
+
+.layout > nav {
+		flex: 0 1 content;
+		order: var(--site-nav-order);
+		padding-right: var(--spacer-m);
+}
+
+.layout > main {
+		flex: 1 1 var(--main-base-width);
+}
