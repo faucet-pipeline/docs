@@ -1,0 +1,11 @@
+.skip {
+		position: absolute;
+		right: 100%;
+		color: var(--main-color);
+}
+
+.skip:focus {
+		right: auto;
+		left: var(--spacer-m);
+		color: var(--background-color);
+}

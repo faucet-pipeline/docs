@@ -1,0 +1,7 @@
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.metadata.title }}, {{ site.metadata.tagline }}, and so on.
+
+title: faucet-pipeline
+tagline: the no-nonsense asset pipeline for humans
+description: painless pre-processing of JavaScript, CSS and more

@@ -1,4 +1,7 @@
 /node_modules
-/.eslintcache
-
-/dist
+/.gems
+/.bridgetown-cache
+/compact_index
+/output
+/tmp
+/.envrc

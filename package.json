@@ -1,28 +1,19 @@
 {
-	"scripts": {
-		"start": "npm-run-all compile --parallel compile:watch build:watch",
-		"test": "eslint --cache --ext .js --ext .jsx *.js lib/components views && echo ✓",
-		"build": "complate-ssg",
-		"build:watch": "nodemon -w dist/views.js -w content -e md -x 'npm run build' < /dev/null",
-		"build:prod": "npm-run-all compile:prod build",
-		"compile": "faucet --compact",
-		"compile:watch": "faucet --watch --serve 0.0.0.0:8000",
-		"compile:prod": "faucet --compact --fingerprint"
-	},
-	"dependencies": {
-		"prismjs": "^1.29.0"
-	},
-	"devDependencies": {
-		"@openfonts/titillium-web_latin": "^1.44.2",
-		"commonmark": "^0.30.0",
-		"complate-ssg": "^0.19.4",
-		"donny": "^0.3.0",
-		"eslint-config-fnd-jsx": "^1.8.0",
-		"faucet-pipeline-sass": "^1.8.0",
-		"faucet-pipeline-static": "^2.1.0",
-		"metacolon": "^1.1.1",
-		"nodemon": "^2.0.22",
-		"normalize.css": "^8.0.1",
-		"npm-run-all": "^4.1.5"
-	}
+  "name": "faucet",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "esbuild": "node esbuild.config.js --minify",
+    "esbuild-dev": "node esbuild.config.js --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2",
+    "glob": "^10.3.3",
+    "postcss": "^8.5.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^16.1.0",
+    "postcss-load-config": "^6.0.1",
+    "postcss-preset-env": "^10.1.3",
+    "read-cache": "^1.0.0"
+  }
 }

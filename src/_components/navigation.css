@@ -1,0 +1,25 @@
+.navigation ul {
+		padding: 0;
+		list-style: none;
+}
+
+.navigation li {
+		color: var(--text-color-brighter);
+		padding: 0 var(--spacer-m);
+}
+
+.navigation li.selected {
+		border: 1px solid var(--highlight-background);
+		border-radius: var(--base-border-radius);
+}
+
+.navigation a {
+		display: block;
+		padding: var(--spacer-xxs) var(--spacer-xs);
+		color: var(--text-color-bright);
+		text-decoration: none;
+}
+
+.navigation a:hover {
+		color: var(--text-color);
+}
