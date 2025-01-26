@@ -11,16 +11,14 @@ This typically happens when importing a module that has already been bundled or
 otherwise provides a distribution. The solution is to skip transpilation there:
 
 ```javascript
-module.exports = {
-    js: [{
-        source: "./index.js",
-        target: "./dist/bundle.js",
-        esnext: {
-            // ...
-            exclude: ["jquery"]
-        }
-    }]
-}
+export const js = [{
+    source: "./index.js",
+    target: "./dist/bundle.js",
+    esnext: {
+        // ...
+        exclude: ["jquery"]
+    }
+}];
 ```
 
 (This is necessary because faucet assumes we're consuming ES6 modules by

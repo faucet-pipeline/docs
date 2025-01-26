@@ -49,6 +49,7 @@ actually writing the code. Thus we can easily recommend it to friends and
 colleagues and get them started in less than a minute.
 
 Of course, faucet wouldn’t be possible without relying on fantastic work by many
-people; we merely provide a bit of glue code on top. The work on this project is
-sponsored by [INNOQ](https://www.innoq.com) & [fejo.dk](https://www.fejo.dk). It
-is used both in production and internal applications by both companies.
+people; we merely provide a bit of glue code on top. Part of the work on this
+project was sponsored by [INNOQ](https://www.innoq.com) and
+[fejo.dk](https://www.fejo.dk). It is used both in production and internal
+applications by both companies.

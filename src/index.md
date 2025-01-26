@@ -14,23 +14,29 @@ details.
 Creating a CSS bundle from [Sass](http://sass-lang.com) modules:
 
 ```javascript
+export const sass = [{
     source: "./styles/index.scss",
     target: "./dist/bundle.css"
+}];
 ```
 
 Bundling and transpiling JavaScript:
 
 ```javascript
+export const js = [{
     source: "./src/index.js",
     target: "./dist/bundle.js",
     esnext: true // activates ES6 transpiler
+}];
 ```
 
 Fingerprinting arbitrary files, like fonts and images:
 
 ```javascript
+export const static = [{
     source: "./assets",
     target: "./dist/assets"
+}];
 ```
 
 
@@ -48,12 +54,10 @@ Configuration resides in `faucet.config.js` – in this case, we want to bundle
 our JavaScript::
 
 ```javascript
-module.exports = {
-    js: [{
-        source: "./src/index.js",
-        target: "./dist/bundle.js"
-    }]
-};
+export const js = [{
+    source: "./src/index.js",
+    target: "./dist/bundle.js"
+}];
 ```
 
 Let's create two source files within the `src` directory, `index.js` and
