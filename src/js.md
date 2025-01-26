@@ -16,13 +16,11 @@ bundle to output a different module format like ESM (your choices are: `iife`,
 `esm`, `umd`, `amd`, and `commonjs`):
 
 ```js
-module.exports = {
-    js: [{
-        source: "./index.js",
-        target: "./dist/bundle.js",
-        format: "esm"
-    }]
-};
+export const js = [{
+    source: "./index.js",
+    target: "./dist/bundle.js",
+    format: "esm"
+}];
 ```
 
 If you chose a module format that does not support importing/exporting natively
@@ -35,15 +33,13 @@ variable - you can declare that library to be "external":
 faucet:
 
 ```js
-module.exports = {
-    js: [{
-        source: "./index.js",
-        target: "./dist/bundle.js",
-        externals: {
-            jquery: "jQuery"
-        }
-    }]
-};
+export const js = [{
+    source: "./index.js",
+    target: "./dist/bundle.js",
+    externals: {
+        jquery: "jQuery"
+    }
+}];
 ```
 
 With this configuration, importing `from "jquery"` will be rewritten to
@@ -70,17 +66,15 @@ faucet-js offers three options to reduce a bundle's file size:
 More extreme reductions can be activated via the bundle's `compact` setting:
 
 ```js
-module.exports = {
-    js: [{
-        source: "./index.js",
-        target: "./dist/bundle.min.js",
-        compact: "minify"
-    }, {
-        source: "./index.js",
-        target: "./dist/bundle.mangled.js",
-        compact: "mangle"
-    }]
-};
+export const js = [{
+    source: "./index.js",
+    target: "./dist/bundle.min.js",
+    compact: "minify"
+}, {
+    source: "./index.js",
+    target: "./dist/bundle.mangled.js",
+    compact: "mangle"
+}];
 ```
 
 `minify` will additionally remove all non-significant whitespace, `mangle`
@@ -99,27 +93,23 @@ file](https://github.com/ai/browserslist/) to specify which browsers you want to
 support. This is an example configuration:
 
 ```js
-module.exports = {
-    js: [{
-        source: "./index.js",
-        target: "./dist/bundle.js",
-        esnext: true
-    }]
-};
+export const js = [{
+    source: "./index.js",
+    target: "./dist/bundle.js",
+    esnext: true
+}];
 ```
 
 You can also deactivate the automatic browserslist detection:
 
 ```js
-module.exports = {
-    js: [{
-        source: "./index.js",
-        target: "./dist/bundle.js",
-        esnext: {
-            browserslist: false
-        }
-    }]
-};
+export const js = [{
+    source: "./index.js",
+    target: "./dist/bundle.js",
+    esnext: {
+        browserslist: false
+    }
+}];
 ```
 
 If your browserslist is configured for multiple
@@ -127,36 +117,32 @@ If your browserslist is configured for multiple
 you can choose which one to use for each bundle:
 
 ```js
-module.exports = {
-    js: [{
-        source: "./index.js",
-        target: "./dist/bundle.js",
-        esnext: {
-            browserslist: "default"
-        }
-    }, {
-        source: "./index.js",
-        target: "./dist/legacy.js",
-        esnext: {
-            browserslist: "legacy"
-        }
-    }]
-};
+export const js = [{
+    source: "./index.js",
+    target: "./dist/bundle.js",
+    esnext: {
+        browserslist: "default"
+    }
+}, {
+    source: "./index.js",
+    target: "./dist/legacy.js",
+    esnext: {
+        browserslist: "legacy"
+    }
+}];
 ```
 
 You can also exclude modules of the bundle you don't want to transpile with
 `exclude`. This is useful for dependencies that are already transpiled:
 
 ```js
-module.exports = {
-    js: [{
-        source: "./index.js",
-        target: "./dist/bundle.js",
-        esnext: {
-            exclude: ["jquery"]
-        }
-    }]
-};
+export const js = [{
+    source: "./index.js",
+    target: "./dist/bundle.js",
+    esnext: {
+        exclude: ["jquery"]
+    }
+}];
 ```
 
 
@@ -167,13 +153,11 @@ You also need to set `typescript` to true for the bundles that should be
 compiled with TypeScript:
 
 ```js
-module.exports = {
-    js: [{
-        source: "./src/index.ts",
-        target: "./dist/bundle.js",
-        typescript: true
-    }]
-};
+export const js = [{
+    source: "./src/index.ts",
+    target: "./dist/bundle.js",
+    typescript: true
+}];
 ```
 
 Everything described above will still work in the same way (all configuration
@@ -186,13 +170,11 @@ To use JSX, you need to install the `faucet-pipeline-jsx` package. You also
 need to set `jsx` to true for the bundles that should be compiled with JSX:
 
 ```js
-module.exports = {
-    js: [{
-        source: "./src/index.ts",
-        target: "./dist/bundle.js",
-        jsx: true
-    }]
-};
+export const js = [{
+    source: "./src/index.ts",
+    target: "./dist/bundle.js",
+    jsx: true
+}];
 ```
 
 Everything described above will still work in the same way (all configuration

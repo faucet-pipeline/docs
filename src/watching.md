@@ -11,9 +11,5 @@ config file. The configuration expects an array of strings. The strings are
 paths relative to your configuration file. It might look like this:
 
 ```js
-module.exports = {
-    // configuration of your pipelines...
-
-    watchDirs: ["./src", "./lib"]
-}
+export const watchDirs = ["./src", "./lib"];
 ```

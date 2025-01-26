@@ -36,12 +36,10 @@ The manifest generation is activated when you put the `manifest` key in your
 configuration with an object at least containing a `file` option with a path to
 where you want your manifest to go.
 
-```
-module.exports = {
-    manifest: {
-        target: "./path/to/manifest.json"
-    }
-}
+```javascript
+export const manifest = {
+    target: "./path/to/manifest.json"
+};
 ```
 
 By default, the generated manifest will have...
@@ -63,15 +61,13 @@ value relative to a different folder (in some frameworks, that would be
 
 Example:
 
-```
-module.exports = {
-    manifest: {
-        target: "./path/to/manifest.json",
-        key: "short",
-        baseURI: "/assets/",
-        webRoot: "./target"
-    }
-}
+```javascript
+export const manifest = {
+    target: "./path/to/manifest.json",
+    key: "short",
+    baseURI: "/assets/",
+    webRoot: "./target"
+};
 ```
 
 ## Advanced Configuration

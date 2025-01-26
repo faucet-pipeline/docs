@@ -10,15 +10,13 @@ and `target` is the target folder.
 The resulting configuration might look something like this:
 
 ```js
-module.exports = {
-    static: [{
-        source: "./images",
-        target: "./public/images"
-    }, {
-        source: "./fonts",
-        target: "./public/fonts"
-    }]
-};
+export const static = [{
+    source: "./images",
+    target: "./public/images"
+}, {
+    source: "./fonts",
+    target: "./public/fonts"
+}];
 ```
 
 If you only want to copy _some_ of the files, you can select them using a
@@ -30,17 +28,15 @@ In this example, we only copy `.ttf` fonts and omit images from the `templates`
 directory:
 
 ```js
-module.exports = {
-    static: [{
-        source: "./fonts",
-        target: "./public/fonts",
-        filter: file => file.endsWith(".ttf")
-    }, {
-        source: "./images",
-        target: "./public/images",
-        filter: file => !file.startsWith("templates/")
-    }]
-}
+export const static = [{
+    source: "./fonts",
+    target: "./public/fonts",
+    filter: file => file.endsWith(".ttf")
+}, {
+    source: "./images",
+    target: "./public/images",
+    filter: file => !file.startsWith("templates/")
+}];
 ```
 
 ## Compact
@@ -61,13 +57,11 @@ If you prefer to compact your images on your own, you could for example use
 JPGs:
 
 ```js
-module.exports = {
-	static: [{
-		source: "./src",
-		target: "./dist",
-		compact: {
-			jpg: require("imagemin-mozjpeg")({ quality: 80 })
-		}
-    }]
-};
+export const static = [{
+	source: "./src",
+	target: "./dist",
+	compact: {
+		jpg: require("imagemin-mozjpeg")({ quality: 80 })
+	}
+}];
 ```

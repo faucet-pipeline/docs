@@ -11,15 +11,13 @@ compiled, and `target` is the file that should be created (the path is, of
 course, modified a little when you use fingerprinting):
 
 ```js
-module.exports = {
-    sass: [{
-        source: "./example.scss",
-        target: "./output/example.css"
-    }, {
-        source: "./example2.scss",
-        target: "./output/subfolder/example2.css"
-    }]
-};
+export const sass = [{
+    source: "./example.scss",
+    target: "./output/example.css"
+}, {
+    source: "./example2.scss",
+    target: "./output/subfolder/example2.css"
+}];
 ```
 
 To support fingerprinting of images and fonts, use `faucet-pipeline-static` to
@@ -47,13 +45,11 @@ If you don't want to prefix your CSS even though you have a Browserslist
 configuration, you can deactivate it per bundle:
 
 ```js
-module.exports = {
-    sass: [{
-        source: "./example.scss",
-        target: "./output/example.css",
-        browserslist: false
-    }]
-};
+export const sass = [{
+    source: "./example.scss",
+    target: "./output/example.css",
+    browserslist: false
+}];
 ```
 
 If you use groups in your Browserslist, faucet-pipeline uses the `default` group
@@ -61,13 +57,11 @@ by default. If you want to choose a different one, you can, for example, set it 
 "legacy" like this:
 
 ```js
-module.exports = {
-    sass: [{
-        source: "./example.scss",
-        target: "./output/example.css",
-        browserslist: "legacy"
-    }]
-};
+export const sass = [{
+    source: "./example.scss",
+    target: "./output/example.css",
+    browserslist: "legacy"
+}];
 ```
 
 ## Compacting
