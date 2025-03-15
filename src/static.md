@@ -3,6 +3,9 @@ layout: default
 title: faucet-pipeline-static
 ---
 
+**Note:** This is a previous version of faucet-pipeline-assets that does not work
+with projects using ESM. Please use [faucet-pipeline-assets](/assets) instead.
+
 The configuration is an array of folders or single files you want to copy. Each
 entry of the array is an object with two keys: `source` is the source folder,
 and `target` is the target folder.
@@ -10,13 +13,15 @@ and `target` is the target folder.
 The resulting configuration might look something like this:
 
 ```js
-export const static = [{
-    source: "./images",
-    target: "./public/images"
-}, {
-    source: "./fonts",
-    target: "./public/fonts"
-}];
+module.exports = {
+    static: [{
+        source: "./images",
+        target: "./public/images"
+    }, {
+        source: "./fonts",
+        target: "./public/fonts"
+    }]
+};
 ```
 
 If you only want to copy _some_ of the files, you can select them using a
@@ -28,15 +33,17 @@ In this example, we only copy `.ttf` fonts and omit images from the `templates`
 directory:
 
 ```js
-export const static = [{
-    source: "./fonts",
-    target: "./public/fonts",
-    filter: file => file.endsWith(".ttf")
-}, {
-    source: "./images",
-    target: "./public/images",
-    filter: file => !file.startsWith("templates/")
-}];
+module.exports = {
+    static: [{
+        source: "./fonts",
+        target: "./public/fonts",
+        filter: file => file.endsWith(".ttf")
+    }, {
+        source: "./images",
+        target: "./public/images",
+        filter: file => !file.startsWith("templates/")
+    }]
+}
 ```
 
 ## Compact
@@ -57,11 +64,13 @@ If you prefer to compact your images on your own, you could for example use
 JPGs:
 
 ```js
-export const static = [{
-	source: "./src",
-	target: "./dist",
-	compact: {
-		jpg: require("imagemin-mozjpeg")({ quality: 80 })
-	}
-}];
+module.exports = {
+	static: [{
+		source: "./src",
+		target: "./dist",
+		compact: {
+			jpg: require("imagemin-mozjpeg")({ quality: 80 })
+		}
+    }]
+};
 ```
