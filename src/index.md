@@ -33,7 +33,7 @@ export const js = [{
 Fingerprinting arbitrary files, like fonts and images:
 
 ```javascript
-export const static = [{
+export const assets = [{
     source: "./assets",
     target: "./dist/assets"
 }];
