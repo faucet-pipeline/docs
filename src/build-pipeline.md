@@ -3,73 +3,128 @@ layout: default
 title: Build a Pipeline
 ---
 
-If you want to support other JS dialects or CSS preprocessors, you can
-contribute an additional pipeline to the project. We recommend that you read the
-source for the
-[faucet-pipeline-static](https://github.com/faucet-pipeline/faucet-pipeline-static)
-project. It is the simplest of the existing pipelines, because it just copies
-file from one place to another.
+You can add support for other file types or CSS/JS dialects by writing your own
+pipeline. Here we present a quick hands-on tutorial and then a reference to the
+parameters provided.
 
-## Registering your pipeline
+## Tutorial
 
-The faucet-pipeline project has a list of known pipelines that it automatically
-requires and initializes. When you write a new plugin it won't be on that list.
-In this case, you need to configure faucet to load your plugin. In your
-faucet.config.js you put:
+Let's start by initializing a new npm repository for your pipeline, and add
+`faucet-pipeline-core` as a dependency:
+
+```
+mkdir faucet-pipeline-example
+cd faucet-pipeline-example
+npm init -y
+npm i --save faucet-pipeline-core
+```
+
+Adjust the type to be a `module` in the package.json; we have left the Stone
+Age. Let's start by setting it up in an example faucet configuration
+`faucet.config.js`:
+
+```js
+export const example = [{
+	a: 1,
+	b: 2
+}];
+
+export const plugins = [
+	{
+		key: "example",
+		bucket: "static",
+		plugin: function(config) {
+			return function() {
+				console.log(config);
+			}
+		}
+	}
+]
+```
+
+If you run `npx faucet` now, your output will be:
+
+```
+[ { a: 1, b: 2 } ]
+```
+
+The `plugins` that are exported are an array of additional plugins added to the
+default ones that faucet knows about. Each entry is an object with a key, bucket
+and plugin (we get back to buckets later). faucet will then check if in the
+configuration there is a variable exported with the `key` you provided (in our
+case, that would be `example`). If so, it will initialize your plugin function.
+We expect that the plugin function has the following signature:
 
 ```javascript
-module.exports = {
-  name: [{
-    a: 1,
-    b: 2
-  }]
+export function plugin(pluginConfig, assetManager, options) {
+    // initialize your pipeline
 
-  plugins: {
-    name: {
-      plugin: path.resolve("./path/to/your/plugin"),
-      bucket: "chosen-bucket"
+    return function(filepaths) {
+        // run the pipeline
     }
-  }
 }
 ```
 
-With this configuration, your plugin with the name `name` will be loaded from
-the provided path when running `faucet`. You also need to choose one of our four
-"buckets". It is a categorization of the pipelines that determines the order in
-which they will be run. You have the choice between the following buckets – the
-choice depends on the kind of files that your pipeline generates:
+The `pluginConfig` is whatever you write in the config file (in the example
+above this would be `[{ a: 1, b: 2 }]` which explains the output).
+The convention is to expect an array of tasks. Each of them is an object with a
+`source` and a `target` plus any other things you need to configure. The other
+two options are described below: [`assetManager`](#assetManager) and
+[`options`](#Options).
+
+The function should return a function that runs your pipeline. This function
+takes an optional argument:
+
+* If it is `undefined`, then run the pipeline.
+* Otherwise, it is an array of paths. Only run the pipeline, if changes to these
+    files can change your output.
+
+## Skeleton
+
+This is the skeleton of the `index.js` of your plugin:
+
+```javascript
+// the key that is exported in faucet.config.js
+export const key = "example";
+
+// the bucket - see below
+export const bucket = "static";
+
+// your plugin
+export function plugin(pluginConfig, assetManager, options) {
+    // initialize your pipeline
+
+    return function(filepaths) {
+        // run the pipeline
+    }
+}
+```
+
+As a user of the plugin, you can then use it like this in your
+`faucet.config.js`:
+
+```js
+import * as examplePlugin from "...";
+
+export const example = [{
+	a: 1,
+	b: 2
+}];
+
+export const plugins = [ examplePlugin ];
+```
+
+## Buckets
+
+You also need to choose one of our four "buckets". It is a categorization of the
+pipelines that determines the order in which they will be run. You have the
+choice between the following buckets – the choice depends on the kind of files
+that your pipeline generates:
 
 * static: Static files like images or fonts
 * scripts: JavaScript/WebAssembly files
 * styles: CSS files
 * markup: HTML files
-
-expect your main module to export a function with the following signature:
-
-```javascript
-module.exports = function(pluginConfig, assetManager, options) {
-}
-```
-
-The `pluginConfig` is whatever you write in the config file (in the example
-above this would be `[{ a: 1, b: 2 }]`). The convention is to expect an array of
-tasks. Each of them is an object with a `source` and a `target` plus any other
-things you need to configure. The assetManager will be described below in its
-own section. `options` is an object with the following keys:
-
-* `browsers` is the detected [browserslist](https://github.com/ai/browserslist).
-    Learn more about it in the `browsers` section.
-* `sourcemaps` is a boolean that indicates if you should add sourcemaps to your
-    generated output (applies to JS and CSS only)
-* `compact` is a boolean that indicates if the user wants a compact output
-    format or not.
-
-This function should return a function that runs your pipeline. This function
-takes an optional argument:
-
-* If it is undefined, then run the pipeline
-* Otherwise, it is an array of paths. Only run the pipeline, if changes to these
-    files can change your output.
 
 ## assetManager
 
@@ -115,27 +170,12 @@ You can also receive entries from the manifest like this:
 assetManager.manifest.get(name)
 ```
 
-## browsers
+## Options
 
-`browsers` is the detected [browserslist](https://github.com/ai/browserslist).
-It is an object with keys for each browserslist. Your plugin can ignore this
-when it doesn't produce code that needs to be modified due to supported
-browsers.
+`options` is an object with the following keys derived from the CLI invocation:
 
-If no browserslist was detected, the object will be empty. If one was detected,
-it contains at least the browserslist `"default"` which you should default to.
-You can allow users to ignore the browserslist for one of the bundles or choose
-another browserslist. The convention for the name of that options is
-`browserslist`. An example for an implementation could look like this:
+* `sourcemaps` is a boolean that indicates if you should add sourcemaps to your
+    generated output.
+* `compact` is a boolean that indicates if the user wants a compact output
+    format or not.
 
-```javascript
-let selectedBrowsers;
-let { browserslist } = bundleConfig;
-if(browserslist === false) {
-    selectedBrowsers = null;
-} else if(browserslist) {
-    selectedBrowsers = browsers[browserslist];
-} else {
-    selectedBrowsers = browsers.defaults;
-}
-```
