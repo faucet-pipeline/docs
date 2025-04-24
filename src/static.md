@@ -10,7 +10,7 @@ and `target` is the target folder.
 The resulting configuration might look something like this:
 
 ```js
-export const static = [{
+export const assets = [{
     source: "./images",
     target: "./public/images"
 }, {
@@ -28,7 +28,7 @@ In this example, we only copy `.ttf` fonts and omit images from the `templates`
 directory:
 
 ```js
-export const static = [{
+export const assets = [{
     source: "./fonts",
     target: "./public/fonts",
     filter: file => file.endsWith(".ttf")
@@ -57,7 +57,7 @@ If you prefer to compact your images on your own, you could for example use
 JPGs:
 
 ```js
-export const static = [{
+export const assets = [{
 	source: "./src",
 	target: "./dist",
 	compact: {
