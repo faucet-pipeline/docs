@@ -128,7 +128,7 @@ GEM
       psych (>= 4.0.0)
     reline (0.6.1)
       io-console (~> 0.5)
-    rexml (3.4.1)
+    rexml (3.4.2)
     roda (3.91.0)
       rack
     rouge (4.5.1)
