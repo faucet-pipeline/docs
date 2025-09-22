@@ -2,13 +2,14 @@
   "name": "faucet",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "esbuild": "node esbuild.config.js --minify",
     "esbuild-dev": "node esbuild.config.js --watch"
   },
   "devDependencies": {
-    "esbuild": "^0.25.8",
-    "glob": "^11.0.1",
+    "esbuild": "^0.25.10",
+    "glob": "^11.0.3",
     "postcss": "^8.5.3",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^16.1.0",
