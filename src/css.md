@@ -5,17 +5,6 @@ title: faucet-pipeline-css
 
 faucet-pipeline-css offers bundling for files written in CSS.
 
-**Note that this module is in beta**
-
-To enable this **beta module** you need to add the following lines to your
-faucet.config.js:
-
-```js
-export const plugins = [
-    require("faucet-pipeline-css")
-];
-```
-
 The configuration is an array of bundles you want to create. Each entry of the
 array is an object with two keys: `source` is the file that should be
 compiled, and `target` is the file that should be created (the path is, of
