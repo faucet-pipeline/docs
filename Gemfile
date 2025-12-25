@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-gem "bridgetown", "~> 2.0.5"
+gem "bridgetown", "~> 2.1.0"
 gem "puma"
