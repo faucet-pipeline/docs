@@ -108,7 +108,7 @@ GEM
     minitest (5.26.1)
     net-http (0.8.0)
       uri (>= 0.11.1)
-    nio4r (2.7.4)
+    nio4r (2.7.5)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -116,7 +116,7 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (7.1.0)
+    puma (7.2.0)
       nio4r (~> 2.0)
     rack (3.2.4)
     rackup (2.2.1)
