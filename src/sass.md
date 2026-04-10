@@ -20,7 +20,7 @@ export const sass = [{
 }];
 ```
 
-To support fingerprinting of images and fonts, use `faucet-pipeline-static` to
+To support fingerprinting of images and fonts, use `faucet-pipeline-assets` to
 fingerprint them. Then you can use the `asset-url` function in your Sass files
 to get the correct path. It expects a key from the manifest as its argument, and
 outputs an `url()` with the value from the manifest. For example:
