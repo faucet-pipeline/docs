@@ -6,7 +6,7 @@ title: Build a Pipeline
 If you want to support other JS dialects or CSS preprocessors, you can
 contribute an additional pipeline to the project. We recommend that you read the
 source for the
-[faucet-pipeline-static](https://github.com/faucet-pipeline/faucet-pipeline-static)
+[faucet-pipeline-assets](https://github.com/faucet-pipeline/faucet-pipeline-assets)
 project. It is the simplest of the existing pipelines, because it just copies
 file from one place to another.
 

@@ -20,49 +20,25 @@ export const css = [{
 }];
 ```
 
-To support fingerprinting of images and fonts, use `faucet-pipeline-static` to
-fingerprint them. Then you can use the `asset-url` function in your CSS files
-to get the correct path. It expects a key from the manifest as its argument, and
-outputs an `url()` with the value from the manifest. For example:
+## Fingerprinting
+
+To support fingerprinting of images and fonts, use `faucet-pipeline-assets` to
+fingerprint them. `faucet-pipeline-css` will automatically replace the URLs
+passed to `url()` with the fingerprinted version:
 
 ```css
 @font-face {
 	font-family: "Titillium Web";
 	font-weight: 400;
-	src: asset-url("titillium-web-regular.woff2") format("woff2");
+    /* in the resulting CSS, the following URL will be fingerprinted */
+	src: url("titillium-web-regular.woff2") format("woff2");
 	font-display: swap;
 }
 ```
 
-If you want to add vendor prefixes to your resulting CSS automatically,
-`faucet-pipeline-css` includes
-[`autoprefixer`](https://github.com/postcss/autoprefixer) to do that. It is only
-activated if it finds a [`browserslist`](https://github.com/ai/browserslist)
-configuration (for example `.browserslistrc`) in your project and prefix
-according to your target browsers.
+## Transform future syntax
 
-If you don't want to prefix your CSS even though you have a Browserslist
-configuration, you can deactivate it per bundle:
-
-```js
-export const css = [{
-    source: "./example.scss",
-    target: "./output/example.css",
-    browserslist: false
-}];
-```
-
-If you use groups in your Browserslist, faucet-pipeline uses the `default` group
-by default. If you want to choose a different one, you can, for example, set it to
-"legacy" like this:
-
-```js
-export const css = [{
-    source: "./example.scss",
-    target: "./output/example.css",
-    browserslist: "legacy"
-}];
-```
+transform: ["nesting"]
 
 ## Compacting
 

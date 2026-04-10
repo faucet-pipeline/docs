@@ -85,6 +85,6 @@ fingerprint* relative to your configuration file as its input (Example:
 `"public/images/background/example-12345.jpg"` and `"public/images"`). The
 return value will be used as the value.
 
-The target directory is the `target` in the case of `faucet-pipeline-static`, and
+The target directory is the `target` in the case of `faucet-pipeline-assets`, and
 the dirname of the `target` in the case of `faucet-pipeline-js` and
 `faucet-pipeline-sass`.

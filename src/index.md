@@ -102,5 +102,5 @@ $ node dist/bundle.js
 
 The [JavaScript docs](/js) provide a more detailed explanation, including
 configuration options. You might also be interested in [Sass](/sass),
-[images](/images), [static files](/static), or
+[images](/images), [static files](/assets), or
 [fingerprinting](/manifest).
